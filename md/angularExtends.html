@@ -1,0 +1,1106 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body .markdown-body {
+    padding: 45px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    word-wrap: break-word;
+}
+
+pre {
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body input {
+  font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.markdown-body a {
+  color: #4078c0;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body .select::-ms-expand {
+  opacity: 0;
+}
+
+.markdown-body .octicon {
+  font: normal normal normal 16px/1 octicons-anchor;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+
+.markdown-body:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body .anchor {
+  display: inline-block;
+  padding-right: 2px;
+  margin-left: -18px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #000;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h1 .anchor {
+  line-height: 1;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 .anchor {
+  line-height: 1;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h3 .anchor {
+  line-height: 1.2;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 .anchor {
+  line-height: 1.2;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h5 .anchor {
+  line-height: 1.1;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body h6 .anchor {
+  line-height: 1.1;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .pl-c {
+  color: #969896;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #0086b3;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #333;
+}
+
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+
+.markdown-body .pl-k {
+  color: #a71d5d;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #183691;
+}
+
+.markdown-body .pl-v {
+  color: #ed6a43;
+}
+
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mq {
+  color: #008080;
+}
+
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .plan-price-unit {
+  color: #767676;
+  font-weight: normal;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 0.35em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body .plan-choice {
+  padding: 15px;
+  padding-left: 40px;
+  display: block;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  font-weight: normal;
+  background-color: #fafafa;
+}
+
+.markdown-body .plan-choice.open {
+  background-color: #fff;
+}
+
+.markdown-body .plan-choice.open .plan-choice-seat-breakdown {
+  display: block;
+}
+
+.markdown-body .plan-choice-free {
+  border-radius: 3px 3px 0 0;
+}
+
+.markdown-body .plan-choice-paid {
+  border-radius: 0 0 3px 3px;
+  border-top: 0;
+  margin-bottom: 20px;
+}
+
+.markdown-body .plan-choice-radio {
+  position: absolute;
+  left: 15px;
+  top: 18px;
+}
+
+.markdown-body .plan-choice-exp {
+  color: #999;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.markdown-body .plan-choice-seat-breakdown {
+  margin-top: 10px;
+  display: none;
+}
+
+.markdown-body :checked+.radio-label {
+  z-index: 1;
+  position: relative;
+  border-color: #4078c0;
+}
+</style><title>angularExtends</title></head><body><article class="markdown-body"><h2>
+<a id="user-content-angularjscontroller数据共享继承通信使用详解" class="anchor" href="#angularjscontroller%E6%95%B0%E6%8D%AE%E5%85%B1%E4%BA%AB%E7%BB%A7%E6%89%BF%E9%80%9A%E4%BF%A1%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AngularJs:Controller数据共享、继承、通信使用详解</h2>
+
+<h3>
+<a id="user-content-一controller基础与用法" class="anchor" href="#%E4%B8%80controller%E5%9F%BA%E7%A1%80%E4%B8%8E%E7%94%A8%E6%B3%95" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>一、controller基础与用法</h3>
+
+<pre><code>AngularJS中的controller中文名就是控制器，它是一个Javascript函数（类型/类），用来向视图的作用域（$scope）添加额外的功能。而且每个controller都有自己的scope， 同时也可以共享他们父controller的scope内的数据。
+
+其能实现的功能如下：
+</code></pre>
+
+<h4>
+<a id="user-content-1给作用域对象设置初始状态" class="anchor" href="#1%E7%BB%99%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%AF%B9%E8%B1%A1%E8%AE%BE%E7%BD%AE%E5%88%9D%E5%A7%8B%E7%8A%B6%E6%80%81" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>（1）给作用域对象设置初始状态</h4>
+
+<pre><code>你可以通过创建一个模型属性来设置初始作用域的初始状态。 比如:
+
+var app = angular.module('myApp', []);  
+app.controller('myController', function($scope) {  
+    $scope.inputValue = "林炳文Evankaka";  
+});  
+
+上面我们设置了一个inputValue，如果要在html页面中使用，就可以直接用{{inputValue}},如下：
+
+&lt;h1&gt;您输入的内容为：{{inputValue}}&lt;/h1&gt;
+
+当然，你也可以将此数据双向绑定到一个input、select等，如下：
+
+&lt;input  type="text" ng-model = "inputValue"&gt; 
+</code></pre>
+
+<h4>
+<a id="user-content-2给作用域对象增加行为" class="anchor" href="#2%E7%BB%99%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%AF%B9%E8%B1%A1%E5%A2%9E%E5%8A%A0%E8%A1%8C%E4%B8%BA" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>（2）给作用域对象增加行为</h4>
+
+<pre><code>AngularJS作用域对象的行为是由作用域的方法来表示的。这些方法是可以在模板或者说视图中调用的。这些方法和应用模型交互，并且能改变模型。
+
+如我们在模型那一章所说的，任何对象（或者原生的类型）被赋给作用域后就会变成模型。任何赋给作用域的方法，都能在模板或者说视图中被调用，并且能通过表达式或者ng事件指令调用。如下：
+
+var app = angular.module('myApp', []);  
+app.controller('myController', function($scope) {  
+    $scope.myClick = function(){  
+        alert("click");  
+    }  
+});
+
+然后页面上使用：
+
+&lt;button ng-click= "myClick()" &gt;&lt;/button&gt;
+
+这样就给button添加了一个点击事件。
+</code></pre>
+
+<h3>
+<a id="user-content-二controller继承" class="anchor" href="#%E4%BA%8Ccontroller%E7%BB%A7%E6%89%BF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>二、controller继承</h3>
+
+<pre><code>这里说的继承一般说的是scope数据，这是因为子控制器的作用域将会原型继承父控制器的作用域。因此当你需要重用来自父控制器中的功能时，你所要做的就是在父作用域中添加相应的方法。这样一来，自控制器将会通过它的作用域的原型来获取父作用域中的所有方法。
+
+如下实例：
+
+&lt;!DOCTYPE html&gt;  
+&lt;html lang="zh" ng-app="myApp"&gt;  
+&lt;head&gt;  
+    &lt;meta charset="UTF-8"&gt;  
+    &lt;title&gt;AngularJS入门学习&lt;/title&gt;  
+    &lt;script type="text/javascript"  src="./1.5.3/angular.min.js"&gt;&lt;/script&gt;  
+&lt;/head&gt;  
+&lt;body&gt;  
+    &lt;div ng-controller = "parentCtrl"&gt;  
+        &lt;p&gt;&lt;input  type="text" ng-model = "value1"&gt;请输入内容&lt;/p&gt;  
+        &lt;h1&gt;您输入的内容为：{{value1}}&lt;/h1&gt;  
+          &lt;div ng-controller = "childCtrl"&gt;  
+            &lt;button ng-click = "gerParentValue()"&gt;&lt;/button&gt;  
+          &lt;/div&gt;  
+    &lt;/div&gt;  
+
+&lt;/body&gt;  
+&lt;script type="text/javascript"&gt;  
+var app = angular.module('myApp', []);//获得整个angularJS影响的html元素  
+app.controller('parentCtrl',function($scope){  
+    $scope.value2 = "我是林炳文";  
+});    
+
+app.controller('childCtrl',function($scope){  
+    $scope.gerParentValue = function() {  
+        alert($scope.value1 + $scope.value2);  
+    }  
+});   
+&lt;/script&gt;  
+&lt;/html&gt;  
+
+这里需要注意的是childCtrl所在的DIV一定要放在parentCtrl所在的DIV里才会生效！而且如果你需要从父控制器中调用子控制器的方法，那么使用上面的代码会发生错误。
+</code></pre>
+
+<h3>
+<a id="user-content-三controller之间共享数据" class="anchor" href="#%E4%B8%89controller%E4%B9%8B%E9%97%B4%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>三、controller之间共享数据</h3>
+
+<h4>
+<a id="user-content-1在父级controller中定义scope子级共用" class="anchor" href="#1%E5%9C%A8%E7%88%B6%E7%BA%A7controller%E4%B8%AD%E5%AE%9A%E4%B9%89scope%E5%AD%90%E7%BA%A7%E5%85%B1%E7%94%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>(1)在父级controller中定义scope,子级共用</h4>
+
+<pre><code>&lt;!DOCTYPE html&gt;  
+&lt;html lang="zh" ng-app="myApp"&gt;  
+&lt;head&gt;  
+    &lt;meta charset="UTF-8"&gt;  
+    &lt;title&gt;AngularJS入门学习&lt;/title&gt;  
+    &lt;script type="text/javascript" src="./1.5.3/angular.min.js"&gt;&lt;/script&gt;  
+&lt;/head&gt;  
+&lt;body&gt;  
+   &lt;div  ng-controller="paretnCtrl"&gt;  
+     &lt;input type="text" ng-model="name" /&gt;  
+     &lt;div ng-controller="childCtrl1"&gt;  
+        {{name}}  
+        &lt;button ng-click="setName()"&gt;set name to jack jack jack&lt;/button&gt;  
+     &lt;/div&gt;  
+     &lt;div ng-controller="childCtrl2"&gt;  
+        {{name}}  
+        &lt;button ng-click="setName()"&gt;set name to tom tom tom&lt;/button&gt;  
+     &lt;/div&gt;  
+   &lt;/div&gt;  
+&lt;/body&gt;  
+&lt;script type="text/javascript"&gt;  
+var app = angular.module('myApp', []);  
+app.controller('paretnCtrl', function($scope,$timeout) {  
+    $scope.name = "林炳文Evankaka";  
+});  
+app.controller('childCtrl1', function($scope,$timeout) {  
+    $scope.setName = function() {  
+         $scope.name = "set name to jack jack jack";  
+    };  
+});  
+app.controller('childCtrl2', function($scope,$timeout) {  
+    $scope.setName = function() {  
+        $scope.name = "set name to tom tom tom";  
+    };  
+});  
+&lt;/script&gt;  
+&lt;/html&gt;
+</code></pre>
+
+<h4>
+<a id="user-content-2将数据全局共享" class="anchor" href="#2%E5%B0%86%E6%95%B0%E6%8D%AE%E5%85%A8%E5%B1%80%E5%85%B1%E4%BA%AB" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>（2）将数据全局共享</h4>
+
+<pre><code>angularjs自身有二种，设置全局变量的方法，在加上js的设置全局变量的方法，总共有三种。要实现的功能是，在ng-app中定义的全局变量，在不同的ng-controller里都可以使用。
+
+通过var 直接定义global variable，这根纯js是一样的。
+用angularjs value来设置全局变量 。
+用angularjs constant来设置全局变量 。
+
+下面是使用value的方式
+
+&lt;!DOCTYPE html&gt;  
+&lt;html lang="zh" ng-app="myApp"&gt;  
+&lt;head&gt;  
+    &lt;meta charset="UTF-8"&gt;  
+    &lt;title&gt;AngularJS入门学习&lt;/title&gt;  
+    &lt;script type="text/javascript" src="./1.5.3/angular.min.js"&gt;&lt;/script&gt;  
+&lt;/head&gt;  
+&lt;body&gt;  
+     &lt;div ng-controller="childCtrl1"&gt;  
+        {{name}}  
+        &lt;button ng-click="setName()"&gt;set name to jack jack jack&lt;/button&gt;  
+     &lt;/div&gt;  
+     &lt;div ng-controller="childCtrl2"&gt;  
+        {{name}}  
+        &lt;button ng-click="setName()"&gt;set name to tom tom tom&lt;/button&gt;  
+     &lt;/div&gt;  
+&lt;/body&gt;  
+&lt;script type="text/javascript"&gt;  
+var app = angular.module('myApp', []);  
+app.value('data',{'name':'我是林炳文'});  
+app.controller('childCtrl1', function($scope,data) {  
+    $scope.name = data.name;  
+    $scope.setName = function() {  
+         $scope.name = "set name to jack jack jack";  
+    };  
+});  
+app.controller('childCtrl2', function($scope,data) {  
+       $scope.name = data.name;  
+       $scope.setName = function() {  
+        $scope.name = "set name to tom tom tom";  
+    };  
+});  
+&lt;/script&gt;  
+&lt;/html&gt;
+</code></pre>
+
+<h4>
+<a id="user-content-3service依赖注入" class="anchor" href="#3service%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>（3）service依赖注入</h4>
+
+<pre><code>angularjs最突出的特殊之一就是DI，也就是注入，利用service把需要共享的数据注入给需要的controller。这是最好的方法
+
+&lt;!DOCTYPE html&gt;  
+&lt;html lang="zh" ng-app="myApp"&gt;  
+&lt;head&gt;  
+    &lt;meta charset="UTF-8"&gt;  
+    &lt;title&gt;AngularJS入门学习&lt;/title&gt;  
+    &lt;script type="text/javascript" src="./1.5.3/angular.min.js"&gt;&lt;/script&gt;  
+&lt;/head&gt;  
+&lt;body&gt;  
+     &lt;div ng-controller="childCtrl1"&gt;  
+        {{name}}  
+        &lt;button ng-click="setName()"&gt;set name to jack jack jack&lt;/button&gt;  
+     &lt;/div&gt;  
+     &lt;div ng-controller="childCtrl2"&gt;  
+        {{name}}  
+        &lt;button ng-click="setName()"&gt;set name to tom tom tom&lt;/button&gt;  
+     &lt;/div&gt;  
+&lt;/body&gt;  
+&lt;script type="text/javascript"&gt;  
+var app = angular.module('myApp', []);  
+app.factory('dataService', function() {  
+  var service = {  
+     name:'我是林炳文'  
+   };  
+   return service;  
+});  
+app.controller('childCtrl1', function($scope,dataService) {  
+    $scope.name = dataService.name;  
+    $scope.setName = function() {  
+         $scope.name = "set name to jack jack jack";  
+    };  
+});  
+app.controller('childCtrl2', function($scope,dataService) {  
+       $scope.name = dataService.name;  
+       $scope.setName = function() {  
+        $scope.name = "set name to tom tom tom";  
+    };  
+});  
+&lt;/script&gt;  
+&lt;/html&gt;
+</code></pre>
+
+<h3>
+<a id="user-content-四controller之间通信" class="anchor" href="#%E5%9B%9Bcontroller%E4%B9%8B%E9%97%B4%E9%80%9A%E4%BF%A1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>四、controller之间通信</h3>
+
+<pre><code>在一般情况下基于继承的方式已经足够满足大部分情况了，但是这种方式没有实现兄弟控制器之间的通信方式，所以引出了事件的方式。
+
+基于事件的方式中我们可以里面作用的$on,$emit,$boardcast这几个方式来实现，其中$on表示事件监听，$emit表示向父级以上的作用域触发事件，$boardcast表示向子级以下的作用域广播事件。
+
+$emit只能向parent controller传递event与data
+$broadcast只能向child controller传递event与data
+$on用于接收event与data
+</code></pre>
+
+<h4>
+<a id="user-content-实例一" class="anchor" href="#%E5%AE%9E%E4%BE%8B%E4%B8%80" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>实例一：</h4>
+
+<pre><code>&lt;!DOCTYPE html&gt;  
+&lt;html lang="zh" ng-app="myApp"&gt;  
+&lt;head&gt;  
+    &lt;meta charset="UTF-8"&gt;  
+    &lt;title&gt;AngularJS入门学习&lt;/title&gt;  
+    &lt;script type="text/javascript" src="./1.5.3/angular.min.js"&gt;&lt;/script&gt;  
+&lt;/head&gt;  
+&lt;body&gt;  
+&lt;div ng-app="app" ng-controller="parentCtr"&gt;  
+     &lt;div ng-controller="childCtr1"&gt;childCtr1 name :  
+         &lt;input ng-model="name" type="text" ng-change="change(name)" /&gt;  
+    &lt;/div&gt;  
+     &lt;div ng-controller="childCtr2"&gt;from childCtr1 name:  
+         &lt;input ng-model="ctr1Name" /&gt;  
+     &lt;/div&gt;  
+&lt;/div&gt;  
+&lt;/body&gt;  
+&lt;script type="text/javascript"&gt;  
+var app = angular.module('myApp', []);  
+app.controller("parentCtr",function ($scope) {  
+    $scope.$on("Ctr1NameChange",function (event, msg) {//接收到来自子childCtr1的信息后再广播给所有子controller  
+        console.log("parent", msg);  
+        $scope.$broadcast("Ctr1NameChangeFromParrent", msg);//给所有子controller广播  
+    });  
+});  
+app.controller("childCtr1", function ($scope) {  
+    $scope.change = function (name) {  
+        console.log("childCtr1", name);  
+        $scope.$emit("Ctr1NameChange", name);//将信息传递给父controller  
+    };  
+}).controller("childCtr2", function ($scope) {  
+    $scope.$on("Ctr1NameChangeFromParrent",function (event, msg) { //监听来自父controller的信息  
+        console.log("childCtr2", msg);  
+        $scope.ctr1Name = msg;  
+    });  
+});  
+&lt;/script&gt;  
+&lt;/html&gt;
+</code></pre>
+
+<h4>
+<a id="user-content-实例二" class="anchor" href="#%E5%AE%9E%E4%BE%8B%E4%BA%8C" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>实例二：</h4>
+
+<pre><code>&lt;!DOCTYPE html&gt;  
+&lt;html lang="zh" ng-app="myApp"&gt;  
+&lt;head&gt;  
+    &lt;meta charset="UTF-8"&gt;  
+    &lt;title&gt;AngularJS入门学习&lt;/title&gt;  
+    &lt;script type="text/javascript" src="./1.5.3/angular.min.js"&gt;&lt;/script&gt;  
+&lt;/head&gt;  
+&lt;body&gt;  
+&lt;div ng-controller="ParentCtrl"&gt;                &lt;!--父级--&gt;  
+    &lt;div ng-controller="SelfCtrl"&gt;              &lt;!--自己--&gt;  
+         &lt;button ng-click="click()"&gt;click me&lt;/button&gt;  
+        &lt;div ng-controller="ChildCtrl"&gt;  
+
+        &lt;/div&gt;   &lt;!--子级--&gt;  
+    &lt;/div&gt;  
+    &lt;div ng-controller="BroCtrl"&gt;  
+
+    &lt;/div&gt;         &lt;!--平级--&gt;  
+&lt;/div&gt;  
+&lt;/body&gt;  
+&lt;script type="text/javascript"&gt;  
+var app = angular.module('myApp', []);  
+app.controller('SelfCtrl', function($scope) {  
+  $scope.click = function () {  
+    $scope.$broadcast('to-child', 'child');  
+    $scope.$emit('to-parent', 'parent');  
+  }  
+});  
+
+app.controller('ParentCtrl', function($scope) {  
+  $scope.$on('to-parent', function(event,data) {  
+    console.log('ParentCtrl', data);       //父级能得到值  
+  });  
+  $scope.$on('to-child', function(event,data) {  
+    console.log('ParentCtrl', data);       //子级得不到值  
+  });  
+});  
+
+app.controller('ChildCtrl', function($scope){  
+  $scope.$on('to-child', function(event,data) {  
+    console.log('ChildCtrl', data);      //子级能得到值  
+  });  
+  $scope.$on('to-parent', function(event,data) {  
+    console.log('ChildCtrl', data);      //父级得不到值  
+  });  
+});  
+
+app.controller('BroCtrl', function($scope){    
+  $scope.$on('to-parent', function(event,data) {    
+    console.log('BroCtrl', data);         //平级得不到值    
+  });    
+  $scope.$on('to-child', function(event,data) {    
+    console.log('BroCtrl', data);         //平级得不到值    
+  });    
+});  
+&lt;/script&gt;  
+&lt;/html&gt;
+
+$emit和$broadcast可以传多个参数，$on也可以接收多个参数。
+
+***在$on的方法中的event事件参数，其对象的属性和方法如下
+
+事件属性                            目的
+event.targetScope                   发出或者传播原始事件的作用域
+event.currentScope                  目前正在处理的事件的作用域
+event.name                          事件名称
+event.stopPropagation()             一个防止事件进一步传播(冒泡/捕获)
+                                    的函数(这只适用于使用`$emit`发出的事件)
+event.preventDefault()              这个方法实际上不会做什么事，但是会设置
+                                    `defaultPrevented`为true。直到事件监听器的实现者采取行动之前它才会检查`defaultPrevented`的值。
+event.defaultPrevented              如果调用
+</code></pre>
+
+<h3>
+<a id="user-content-五-对于controller层的一些建议" class="anchor" href="#%E4%BA%94-%E5%AF%B9%E4%BA%8Econtroller%E5%B1%82%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BB%BA%E8%AE%AE" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>五、 对于controller层的一些建议</h3>
+
+<pre><code>1、controller层不要涉及到太多的业务逻辑，可以将公用的部分抽取到Service层
+2、service层：主要负责数据交互和数据处理、处理一些业务领域上的逻辑；
+3、controller层：主要负责初始化$scope的变量用于传递给view层，并且处理一些页面交互产生的逻辑;
+4、当一个功能是设计远程API调用、数据集、业务领悟复杂逻辑、将会大量重复的运算方法时就可以考虑将代码以service形式注入controller层。
+5、controller 里的 $scope 是唯一页面数据来源。不要直接修改 DOM。
+6、controller 不要在全局范围
+</code></pre>
+
+<h3>
+<a id="user-content-参考文章" class="anchor" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>参考文章：</h3>
+
+<pre><code>http://www.jianshu.com/p/1e1aaf0fd30a
+http://cnodejs.org/topic/54dd47fa7939ece1281aa54f
+http://www.html-js.com/article/1847
+http://blog.51yip.com/jsjquery/1601.html
+http://www.cnblogs.com/CraryPrimitiveMan/p/3679552.html?utm_source=tuicool&amp;utm_medium=referral
+http://www.cnblogs.com/whitewolf/archive/2013/04/16/3024843.html
+</code></pre>
+</article></body></html>
