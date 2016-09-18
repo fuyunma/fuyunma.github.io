@@ -12,7 +12,7 @@
     (1)Dependency Injection 依赖注入
     (2)Two Way Data-Binding 双向数据绑定
 
-![](../img/Model_View.png)
+![](../../img/AngularJS/Model_View.png)
 
     (3)Testing 测试（单元测试 & 端到端测试）
     (4)Model View Controller 模型 视图 控制器
