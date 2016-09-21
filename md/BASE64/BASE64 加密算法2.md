@@ -21,5 +21,6 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/中的字符作�
 
 <img src="img/eg2.png" alt="不是刚好三个字节的情况">
 
+### Base64解码
 
-
+　　解码是编码的逆过程，先看后面补了几个“=”号，最多只可能补2个“=”号。一个“=”相当于补了2个0，所以去掉后面补的0后，再按8位展开，即可还原。
