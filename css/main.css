@@ -1042,8 +1042,9 @@ margin-left: 1%;
 ==================================================================*/
 
 #blog,#AngularJs {
-    padding-bottom: 110px;
-    padding-top: 70px;
+    /*padding-bottom: 110px;
+    padding-top: 70px;*/
+    padding:70px 0;
 }
 
 .note {
