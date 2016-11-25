@@ -1021,7 +1021,7 @@ body .markdown-body
 <p>That&rsquo;s because as soon as the DOM is in our part at that point a request issued to load that image from the server at that point the angularJS binding expression is not evaluated,so it&rsquo;s using this double curly brace country.flag and closing double curly brace as the part to load the image from and we don&rsquo;t have an image at that part in fact that&rsquo;s not a valid part so that&rsquo;s why we get this 404 error.</p>
 <h6 id="the-image-can-be-found-at-that-part-then-how-is-it-displaying-the-image-that-we-see-right-here"><a name="user-content-the-image-can-be-found-at-that-part-then-how-is-it-displaying-the-image-that-we-see-right-here" href="#the-image-can-be-found-at-that-part-then-how-is-it-displaying-the-image-that-we-see-right-here" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The image can be found at that part then how is it displaying the image that we see right here?</h6>
 <p>The reason we&rsquo;re seeing this image because a second request is made in order to load that image after the binding expression that we have specified as the value for the source attribute is evaluated,so in fact,there are two request made to the server to load that image,one is loaded as soon as the dorm is part at that point the binding is expression is not evaluated,so obviously,you know whick is an invalid part here it can&rsquo;t find the image,so we get that 404 error that we see in the developer tools.</p>
-<p><img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/TwoRequest.png" />    </p>
+<p><img alt="" src="../../img/AngularJS/TwoRequest.png" />    </p>
 <h5 id="scriptjs"><a name="user-content-scriptjs" href="#scriptjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Script.js</h5>
 <pre><code>/// &lt;reference path = "angular.min.js"/&gt;
 
@@ -1064,7 +1064,7 @@ var myApp = angular
 &lt;/html&gt;
 </code></pre>
 <h5 id="result"><a name="user-content-result" href="#result" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h5>
-<p><img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/ImgSrcError.png" /></p>
+<p><img alt="" src="../../img/AngularJS/ImgSrcError.png" /></p>
 <h6 id="reason-for-the-404-error"><a name="user-content-reason-for-the-404-error" href="#reason-for-the-404-error" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Reason for the 404 error:</h6>
 <p>As soon as the DOM is parsed,an attempt is made is to fetch the image from the server.At this point,AngularJS binding expression that is specified with the src attribute is not evaluated.Hence 404(not found) error.</p>
 <h6 id="to-fix-the-404-error-use-the-ng-src-directive-ng-src-attribute-ensures-that-a-request-is-issued-only-after-angularjs-has-evaluated-the-binding-expression"><a name="user-content-to-fix-the-404-error-use-the-ng-src-directive-ng-src-attribute-ensures-that-a-request-is-issued-only-after-angularjs-has-evaluated-the-binding-expression" href="#to-fix-the-404-error-use-the-ng-src-directive-ng-src-attribute-ensures-that-a-request-is-issued-only-after-angularjs-has-evaluated-the-binding-expression" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>To fix the 404 error use the ng-src directive : ng-src attribute ensures that a request is issued only after AngularJS has evaluated the binding expression.</h6>
@@ -1109,4 +1109,4 @@ var myApp = angular
                 });
 </code></pre>
 <h5 id="result_1"><a name="user-content-result_1" href="#result_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h5>
-<p><img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/ImgAlt.png" /></p></article></body></html>
+<p><img alt="" src="../../img/AngularJS/ImgAlt.png" /></p></article></body></html>
