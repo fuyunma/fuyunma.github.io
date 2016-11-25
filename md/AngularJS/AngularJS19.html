@@ -1014,119 +1014,16 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>AngularJS1</title></head><body><article class="markdown-body"><h1 id="part-1-what-is-angularjs"><a name="user-content-part-1-what-is-angularjs" href="#part-1-what-is-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>part 1 - What is AngularJS</h1>
+</style><title>AngularJS19</title></head><body><article class="markdown-body"><h1 id="part-19-angularjs-serivces"><a name="user-content-part-19-angularjs-serivces" href="#part-19-angularjs-serivces" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>part 19 - AngularJS Serivces</h1>
 <h2 id="in-this-session-we-will-learn"><a name="user-content-in-this-session-we-will-learn" href="#in-this-session-we-will-learn" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>In this session we will learn</h2>
-<h3 id="1what-is-angularjs"><a name="user-content-1what-is-angularjs" href="#1what-is-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.What is AngularJS</h3>
-<p>AngularJS is a JavaScript framework that helps build web applications.</p>
-<h4 id="httpswwwmadewithangularcom"><a name="user-content-httpswwwmadewithangularcom" href="#httpswwwmadewithangularcom" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>(<a href="https://www.madewithangular.com">https://www.madewithangular.com</a>)</h4>
-<h3 id="2benefits-of-angularjs"><a name="user-content-2benefits-of-angularjs" href="#2benefits-of-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.Benefits of AngularJS</h3>
-<p>(1)Dependency Injection 依赖注入<br />
-(2)Two Way Data-Binding 双向数据绑定</p>
-<p><img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/Model_View.png" /></p>
-<p>(3)Testing 测试（单元测试 &amp; 端到端测试）<br />
-(4)Model View Controller 模型 视图 控制器<br />
-(5)Directives,Filters,etc… Directive指令，过滤器，等等</p>
-<h4 id="httpsangularjsorg-download-angularjs"><a name="user-content-httpsangularjsorg-download-angularjs" href="#httpsangularjsorg-download-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>(<a href="https://angularjs.org-----Download">https://angularjs.org-----Download</a> AngularJS)</h4>
-<h3 id="3a-simple-angular-example"><a name="user-content-3a-simple-angular-example" href="#3a-simple-angular-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.A Simple angular example</h3>
-<h5 id="htmlpage1html"><a name="user-content-htmlpage1html" href="#htmlpage1html" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div ng-app&gt;
-        10 + 20 = {{ 10 + 20 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        40 + 50 = {{ 40 + 50 }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result"><a name="user-content-result" href="#result" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        10 + 20 = 30
-        40 + 50 = {{ 40 + 50 }}
-</code></pre>
-<h5 id="htmlpage1html_1"><a name="user-content-htmlpage1html_1" href="#htmlpage1html_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        10 + 20 = {{ 10 + 20 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        40 + 50 = {{ 40 + 50 }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_1"><a name="user-content-result_1" href="#result_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        10 + 20 = 30
-        40 + 50 = 90
-</code></pre>
-<h5 id="htmlpage1html_2"><a name="user-content-htmlpage1html_2" href="#htmlpage1html_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ 1 == 2 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        {{ 1 == 1 }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_2"><a name="user-content-result_2" href="#result_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        false
-        true
-</code></pre>
-<h5 id="htmlpage1html_3"><a name="user-content-htmlpage1html_3" href="#htmlpage1html_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ { name:"fuyun", age:24 }.name }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_3"><a name="user-content-result_3" href="#result_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        fuyun
-</code></pre>
-<h5 id="htmlpage1html_4"><a name="user-content-htmlpage1html_4" href="#htmlpage1html_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ ['fuyun', 'fuxing', 'fujian'][2] }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_4"><a name="user-content-result_4" href="#result_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        fujian
+<h3 id="1-what-is-a-service-in-angularjs"><a name="user-content-1-what-is-a-service-in-angularjs" href="#1-what-is-a-service-in-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. What is a service in AngularJS</h3>
+<p>A service in Angular is simply an object that provide some sort of service that can be reused with in an angular application.</p>
+<p>The ambulance service object has properties and methods just like any other JavaScript object.AngularJS has a lot of built-in services.</p>
+<h3 id="2-why-do-we-need-services-in-an-angular-application"><a name="user-content-2-why-do-we-need-services-in-an-angular-application" href="#2-why-do-we-need-services-in-an-angular-application" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. Why do we need services in an angular application</h3>
+<p>The primary responsibility of the controller is to build a model for the view,the controller should not be doing too many things.For example,if the controller also has the logic to compute age from date of birth in addition to building the model,then it while it&rsquo;s one of the solid principles that is the single responsibility principle states that an object should only have a single responsibility,so this kind of logic belongs in its own service which can then be injected into the object that needs that service.</p>
+<p>Services encapsulate reusable logic that does not belong anywhere else(i.e Directives,Filters,Views,Models &amp; Controllers).</p>
+<h3 id="3-what-are-the-benefits-of-using-services"><a name="user-content-3-what-are-the-benefits-of-using-services" href="#3-what-are-the-benefits-of-using-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3. What are the benefits of using services</h3>
+<pre><code>(1) Reusability 可重用性
+(2) Dependency Injection 依赖注入
+(3) Testability 可测试性
 </code></pre></article></body></html>

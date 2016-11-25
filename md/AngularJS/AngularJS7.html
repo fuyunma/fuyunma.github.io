@@ -1016,12 +1016,10 @@ body .markdown-body
 }
 </style><title>AngularJS7</title></head><body><article class="markdown-body"><h1 id="part-7-handling-events-in-angularjs"><a name="user-content-part-7-handling-events-in-angularjs" href="#part-7-handling-events-in-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>part 7 - Handling events in AngularJS</h1>
 <h2 id="in-this-session-we-will-learn"><a name="user-content-in-this-session-we-will-learn" href="#in-this-session-we-will-learn" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>In this session we will learn</h2>
-<pre><code>How to handle events in AngularJS
-
-1.Display the list of technologies in a table
-2.Provide the ability to like and dislike a technology
-3.Increment the likes and dislikes when the respective buttons are clicked
-</code></pre>
+<p>How to handle events in AngularJS</p>
+<p>1.Display the list of technologies in a table<br />
+2.Provide the ability to like and dislike a technology<br />
+3.Increment the likes and dislikes when the respective buttons are clicked</p>
 <h5 id="scriptjs"><a name="user-content-scriptjs" href="#scriptjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Script.js</h5>
 <pre><code>/// &lt;reference path = "angular.min.js"/&gt;
 
@@ -1045,9 +1043,8 @@ var myApp = angular
                         technology.dislikes++;
                     }
                 });
-
-In the controller function we have 2 methods to increment likes and dislikes.Both the functions have the technology object that we want to like or dislike as a parameter.
 </code></pre>
+<p>In the controller function we have 2 methods to increment likes and dislikes.Both the functions have the technology object that we want to like or dislike as a parameter.</p>
 <h5 id="htmlpage1html"><a name="user-content-htmlpage1html" href="#htmlpage1html" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en" ng-app = "myModule"&gt;
@@ -1082,9 +1079,8 @@ In the controller function we have 2 methods to increment likes and dislikes.Bot
     &lt;/table&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-
-IncrementLikes() and IncrementDislikes() function are associated with the respective buttons.When any of these buttons are clicked,the corresponding technology object is automatically passed to the function,and the likes or dislikes property is incremented depending on which button is clicked.
 </code></pre>
+<p>IncrementLikes() and IncrementDislikes() function are associated with the respective buttons.When any of these buttons are clicked,the corresponding technology object is automatically passed to the function,and the likes or dislikes property is incremented depending on which button is clicked.</p>
 <h5 id="stylescss"><a name="user-content-stylescss" href="#stylescss" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Styles.css</h5>
 <pre><code>table{
     border-collapse: collapse;
@@ -1103,4 +1099,4 @@ th{
 }
 </code></pre>
 <h5 id="result"><a name="user-content-result" href="#result" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h5>
-<p><img alt="" src="../img/HandlingEvent.png" /></p></article></body></html>
+<p><img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/HandlingEvent.png" /></p></article></body></html>

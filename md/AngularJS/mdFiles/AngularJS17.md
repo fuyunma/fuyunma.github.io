@@ -2,7 +2,7 @@
 
 ## In this session we will learn
 
-    How to consume an ASP.NET Web Service in an AngularJS application?
+How to consume an ASP.NET Web Service in an AngularJS application?
 
 ![](../img/part17.png)
 

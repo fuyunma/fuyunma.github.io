@@ -1014,119 +1014,50 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>AngularJS1</title></head><body><article class="markdown-body"><h1 id="part-1-what-is-angularjs"><a name="user-content-part-1-what-is-angularjs" href="#part-1-what-is-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>part 1 - What is AngularJS</h1>
+</style><title>AngularJS27</title></head><body><article class="markdown-body"><h1 id="part-27-remove-from-url-angularjs"><a name="user-content-part-27-remove-from-url-angularjs" href="#part-27-remove-from-url-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>part 27 - Remove # from URL AngularJS</h1>
 <h2 id="in-this-session-we-will-learn"><a name="user-content-in-this-session-we-will-learn" href="#in-this-session-we-will-learn" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>In this session we will learn</h2>
-<h3 id="1what-is-angularjs"><a name="user-content-1what-is-angularjs" href="#1what-is-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.What is AngularJS</h3>
-<p>AngularJS is a JavaScript framework that helps build web applications.</p>
-<h4 id="httpswwwmadewithangularcom"><a name="user-content-httpswwwmadewithangularcom" href="#httpswwwmadewithangularcom" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>(<a href="https://www.madewithangular.com">https://www.madewithangular.com</a>)</h4>
-<h3 id="2benefits-of-angularjs"><a name="user-content-2benefits-of-angularjs" href="#2benefits-of-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.Benefits of AngularJS</h3>
-<p>(1)Dependency Injection 依赖注入<br />
-(2)Two Way Data-Binding 双向数据绑定</p>
-<p><img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/Model_View.png" /></p>
-<p>(3)Testing 测试（单元测试 &amp; 端到端测试）<br />
-(4)Model View Controller 模型 视图 控制器<br />
-(5)Directives,Filters,etc… Directive指令，过滤器，等等</p>
-<h4 id="httpsangularjsorg-download-angularjs"><a name="user-content-httpsangularjsorg-download-angularjs" href="#httpsangularjsorg-download-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>(<a href="https://angularjs.org-----Download">https://angularjs.org-----Download</a> AngularJS)</h4>
-<h3 id="3a-simple-angular-example"><a name="user-content-3a-simple-angular-example" href="#3a-simple-angular-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.A Simple angular example</h3>
-<h5 id="htmlpage1html"><a name="user-content-htmlpage1html" href="#htmlpage1html" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div ng-app&gt;
-        10 + 20 = {{ 10 + 20 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        40 + 50 = {{ 40 + 50 }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<pre><code>How to remove # from URLs
 </code></pre>
-<h4 id="result"><a name="user-content-result" href="#result" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        10 + 20 = 30
-        40 + 50 = {{ 40 + 50 }}
+<h5 id="step-1-enable-html5mode-routing-to-do-this-inject-locationprovider-into-config-function-in-scriptjs-and-call-html5mode-method-passing-true-as-the-argument-value-with-this-change-the-config-function-will-now-look-as-shown-below"><a name="user-content-step-1-enable-html5mode-routing-to-do-this-inject-locationprovider-into-config-function-in-scriptjs-and-call-html5mode-method-passing-true-as-the-argument-value-with-this-change-the-config-function-will-now-look-as-shown-below" href="#step-1-enable-html5mode-routing-to-do-this-inject-locationprovider-into-config-function-in-scriptjs-and-call-html5mode-method-passing-true-as-the-argument-value-with-this-change-the-config-function-will-now-look-as-shown-below" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 1 : Enable html5mode routing. To do this inject $locationProvider into config() function in script.js and call html5Mode() method passing true as the argument value. With this change the config function will now look as shown below.</h5>
+<pre><code>.config(function ($routeProvider, $locationProvider) {
+    $routeProvider
+        .when("/home", {
+            templateUrl: "Templates/home.html",
+            controller: "homeController"
+        })
+        .when("/courses", {
+            templateUrl: "Templates/courses.html",
+            controller: "coursesController"
+        })
+        .when("/students", {
+            templateUrl: "Templates/students.html",
+            controller: "studentsController"
+        })
+    $locationProvider.html5Mode(true);
+})
 </code></pre>
-<h5 id="htmlpage1html_1"><a name="user-content-htmlpage1html_1" href="#htmlpage1html_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        10 + 20 = {{ 10 + 20 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        40 + 50 = {{ 40 + 50 }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<h5 id="step-2-in-indexhtml-remove-symbols-from-all-the-links-the-links-in-indexhtml-should-look-as-shown-below"><a name="user-content-step-2-in-indexhtml-remove-symbols-from-all-the-links-the-links-in-indexhtml-should-look-as-shown-below" href="#step-2-in-indexhtml-remove-symbols-from-all-the-links-the-links-in-indexhtml-should-look-as-shown-below" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 2 : In index.html, remove # symbols from all the links. The links in index.html should look as shown below.</h5>
+<pre><code>&lt;a href="home"&gt;Home&lt;/a&gt;
+&lt;a href="courses"&gt;Courses&lt;/a&gt;
+&lt;a href="students"&gt;Students&lt;/a&gt;
 </code></pre>
-<h4 id="result_1"><a name="user-content-result_1" href="#result_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        10 + 20 = 30
-        40 + 50 = 90
+<h5 id="step-3-include-the-following-url-rewrite-rule-in-webconfig-this-rewrite-rule-rewrites-all-urls-to-indexhtml-except-if-the-request-is-for-a-file-or-a-directory-or-a-web-api-request"><a name="user-content-step-3-include-the-following-url-rewrite-rule-in-webconfig-this-rewrite-rule-rewrites-all-urls-to-indexhtml-except-if-the-request-is-for-a-file-or-a-directory-or-a-web-api-request" href="#step-3-include-the-following-url-rewrite-rule-in-webconfig-this-rewrite-rule-rewrites-all-urls-to-indexhtml-except-if-the-request-is-for-a-file-or-a-directory-or-a-web-api-request" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 3 : Include the following URL rewrite rule in web.config. This rewrite rule, rewrites all urls to index.html, except if the request is for a file, or a directory or a Web API request.</h5>
+<pre><code>&lt;system.webServer&gt;
+  &lt;rewrite&gt;
+    &lt;rules&gt;
+      &lt;rule name="RewriteRules" stopProcessing="true"&gt;
+        &lt;match url=".*" /&gt;
+        &lt;conditions logicalGrouping="MatchAll"&gt;
+          &lt;add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" /&gt;
+          &lt;add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" /&gt;
+          &lt;add input="{REQUEST_URI}" pattern="^/(api)" negate="true" /&gt;
+        &lt;/conditions&gt;
+        &lt;action type="Rewrite" url="/index.html" /&gt;
+      &lt;/rule&gt;
+    &lt;/rules&gt;
+  &lt;/rewrite&gt;
+&lt;/system.webServer&gt;
 </code></pre>
-<h5 id="htmlpage1html_2"><a name="user-content-htmlpage1html_2" href="#htmlpage1html_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ 1 == 2 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        {{ 1 == 1 }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_2"><a name="user-content-result_2" href="#result_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        false
-        true
-</code></pre>
-<h5 id="htmlpage1html_3"><a name="user-content-htmlpage1html_3" href="#htmlpage1html_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ { name:"fuyun", age:24 }.name }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_3"><a name="user-content-result_3" href="#result_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        fuyun
-</code></pre>
-<h5 id="htmlpage1html_4"><a name="user-content-htmlpage1html_4" href="#htmlpage1html_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ ['fuyun', 'fuxing', 'fujian'][2] }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_4"><a name="user-content-result_4" href="#result_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        fujian
+<h5 id="step-4-set-the-base-href-to-the-location-of-your-single-page-application-in-the-head-section-of-indexhtml-include-the-following-line"><a name="user-content-step-4-set-the-base-href-to-the-location-of-your-single-page-application-in-the-head-section-of-indexhtml-include-the-following-line" href="#step-4-set-the-base-href-to-the-location-of-your-single-page-application-in-the-head-section-of-indexhtml-include-the-following-line" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 4 : Set the base href to the location of your single page application. In the head section of index.html include the following line.</h5>
+<pre><code>&lt;base href="/" /&gt;
 </code></pre></article></body></html>

@@ -2,10 +2,10 @@
 
 ## In this session we will learn
 
-    1.ng-repeat directive in Angular
-    2.Nesting ng-repeat with an example
+1.ng-repeat directive in Angular
+2.Nesting ng-repeat with an example
 
-    ng-repeat is similar to foreach loop in C#
+ng-repeat is similar to foreach loop in C#
 
 #####    Script.js
     /// <reference path = "angular.min.js"/>
@@ -127,10 +127,10 @@
 
 ### Finding the index of an item in the collection:
 
-    1.To find the index of an item in the collection use $index property
-    2.To get the index of the parent element
-        (1)Use $parent.$index
-        (2)Use ng-init="parentIndex=$index"
+1.To find the index of an item in the collection use $index property
+2.To get the index of the parent element
+    (1)Use $parent.$index
+    (2)Use ng-init="parentIndex=$index"
 
 #####To get the index of the parent element(two methods):
 

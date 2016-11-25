@@ -1014,119 +1014,167 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>AngularJS1</title></head><body><article class="markdown-body"><h1 id="part-1-what-is-angularjs"><a name="user-content-part-1-what-is-angularjs" href="#part-1-what-is-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>part 1 - What is AngularJS</h1>
+</style><title>AngularJS17</title></head><body><article class="markdown-body"><h1 id="part-17-consuming-aspnet-web-service-in-angularjs-using-http"><a name="user-content-part-17-consuming-aspnet-web-service-in-angularjs-using-http" href="#part-17-consuming-aspnet-web-service-in-angularjs-using-http" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>part 17 - Consuming ASP.NET Web Service in AngularJS using $http</h1>
 <h2 id="in-this-session-we-will-learn"><a name="user-content-in-this-session-we-will-learn" href="#in-this-session-we-will-learn" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>In this session we will learn</h2>
-<h3 id="1what-is-angularjs"><a name="user-content-1what-is-angularjs" href="#1what-is-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.What is AngularJS</h3>
-<p>AngularJS is a JavaScript framework that helps build web applications.</p>
-<h4 id="httpswwwmadewithangularcom"><a name="user-content-httpswwwmadewithangularcom" href="#httpswwwmadewithangularcom" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>(<a href="https://www.madewithangular.com">https://www.madewithangular.com</a>)</h4>
-<h3 id="2benefits-of-angularjs"><a name="user-content-2benefits-of-angularjs" href="#2benefits-of-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.Benefits of AngularJS</h3>
-<p>(1)Dependency Injection 依赖注入<br />
-(2)Two Way Data-Binding 双向数据绑定</p>
-<p><img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/Model_View.png" /></p>
-<p>(3)Testing 测试（单元测试 &amp; 端到端测试）<br />
-(4)Model View Controller 模型 视图 控制器<br />
-(5)Directives,Filters,etc… Directive指令，过滤器，等等</p>
-<h4 id="httpsangularjsorg-download-angularjs"><a name="user-content-httpsangularjsorg-download-angularjs" href="#httpsangularjsorg-download-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>(<a href="https://angularjs.org-----Download">https://angularjs.org-----Download</a> AngularJS)</h4>
-<h3 id="3a-simple-angular-example"><a name="user-content-3a-simple-angular-example" href="#3a-simple-angular-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.A Simple angular example</h3>
-<h5 id="htmlpage1html"><a name="user-content-htmlpage1html" href="#htmlpage1html" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
+<p>How to consume an ASP.NET Web Service in an AngularJS application?</p>
+<p><img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/part17.png" /></p>
+<h3 id="here-is-what-we-want-to-do"><a name="user-content-here-is-what-we-want-to-do" href="#here-is-what-we-want-to-do" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Here is what we want to do</h3>
+<h6 id="1-create-an-aspnet-web-service-this-web-service-retrieves-the-data-from-sql-server-database-table-returns-it-in-json-format"><a name="user-content-1-create-an-aspnet-web-service-this-web-service-retrieves-the-data-from-sql-server-database-table-returns-it-in-json-format" href="#1-create-an-aspnet-web-service-this-web-service-retrieves-the-data-from-sql-server-database-table-returns-it-in-json-format" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. Create an ASP.NET Web service. This web service retrieves the data from SQL Server database table, returns it in JSON format.</h6>
+<h6 id="2-call-the-web-service-using-angularjs-and-display-employee-data-on-the-web-page"><a name="user-content-2-call-the-web-service-using-angularjs-and-display-employee-data-on-the-web-page" href="#2-call-the-web-service-using-angularjs-and-display-employee-data-on-the-web-page" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. Call the web service using AngularJS and display employee data on the web page.</h6>
+<h5 id="step-1-create-sql-server-table-and-insert-employee-data"><a name="user-content-step-1-create-sql-server-table-and-insert-employee-data" href="#step-1-create-sql-server-table-and-insert-employee-data" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 1 : Create SQL Server table and insert employee data</h5>
+<pre><code>Create table tblEmployees
+(
+    Id int primary key identity,
+    Name nvarchar(50),
+    Gender nvarchar(10),
+    Salary int
+)
+Go
+
+Insert into tblEmployees values ('Ben', 'Male', 55000)
+Insert into tblEmployees values ('Sara', 'Female', 68000)
+Insert into tblEmployees values ('Mark', 'Male', 57000)
+Insert into tblEmployees values ('Pam', 'Female', 53000)
+Insert into tblEmployees values ('Todd', 'Male', 60000)
+Go
+</code></pre>
+<h5 id="step-2-create-new-empty-aspnet-web-application-project-name-it-demo"><a name="user-content-step-2-create-new-empty-aspnet-web-application-project-name-it-demo" href="#step-2-create-new-empty-aspnet-web-application-project-name-it-demo" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 2 : Create new empty asp.net web application project. Name it Demo.</h5>
+<h5 id="step-3-include-the-following-settings-in-webconfig-file"><a name="user-content-step-3-include-the-following-settings-in-webconfig-file" href="#step-3-include-the-following-settings-in-webconfig-file" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 3 : Include the following settings in web.config file.</h5>
+<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;configuration&gt;
+  &lt;connectionStrings&gt;
+    &lt;add name="DBCS"
+         connectionString="server=.;database=SampleDB; integrated security=SSPI"/&gt;
+  &lt;/connectionStrings&gt;
+  &lt;system.web&gt;
+    &lt;webServices&gt;
+      &lt;protocols&gt;
+        &lt;add name="HttpGet"/&gt;
+      &lt;/protocols&gt;
+    &lt;/webServices&gt;
+  &lt;/system.web&gt;
+&lt;/configuration&gt;
+</code></pre>
+<h5 id="step-4-add-a-class-file-to-the-project-name-it-employeecs-copy-and-paste-the-following-code"><a name="user-content-step-4-add-a-class-file-to-the-project-name-it-employeecs-copy-and-paste-the-following-code" href="#step-4-add-a-class-file-to-the-project-name-it-employeecs-copy-and-paste-the-following-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 4 : Add a class file to the project. Name it Employee.cs. Copy and paste the following code.</h5>
+<pre><code>namespace Demo
+{
+    public class Employee
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public string gender { get; set; }
+        public int salary { get; set; }
+    }
+}
+</code></pre>
+<h5 id="step-5-add-a-new-webservice-asmx-name-it-employeeserviceasmx-copy-and-paste-the-following-code"><a name="user-content-step-5-add-a-new-webservice-asmx-name-it-employeeserviceasmx-copy-and-paste-the-following-code" href="#step-5-add-a-new-webservice-asmx-name-it-employeeserviceasmx-copy-and-paste-the-following-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 5 : Add a new WebService (ASMX). Name it EmployeeService.asmx. Copy and paste the following code.</h5>
+<pre><code>using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Web.Script.Serialization;
+using System.Web.Services;
+
+namespace Demo
+{
+    [WebService(Namespace = "http://tempuri.org/")]
+    [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+    [System.ComponentModel.ToolboxItem(false)]
+    [System.Web.Script.Services.ScriptService]
+    public class EmployeeService : System.Web.Services.WebService
+    {
+        [WebMethod]
+        public void GetAllEmployees()
+        {
+            List&lt;Employee&gt; listEmployees = new List&lt;Employee&gt;();
+
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlCommand cmd = new SqlCommand("Select * from tblEmployees", con);
+                con.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    Employee employee = new Employee();
+                    employee.id = Convert.ToInt32(rdr["Id"]);
+                    employee.name = rdr["Name"].ToString();
+                    employee.gender = rdr["Gender"].ToString();
+                    employee.salary = Convert.ToInt32(rdr["Salary"]);
+                    listEmployees.Add(employee);
+                }
+            }
+
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            Context.Response.Write(js.Serialize(listEmployees));
+        }
+    }
+}
+</code></pre>
+<h5 id="step-6-add-a-new-folder-to-the-project-name-it-scripts-download-angularjs-script-file-from-httpangularjsorg-and-past-it-in-scripts-folder"><a name="user-content-step-6-add-a-new-folder-to-the-project-name-it-scripts-download-angularjs-script-file-from-httpangularjsorg-and-past-it-in-scripts-folder" href="#step-6-add-a-new-folder-to-the-project-name-it-scripts-download-angularjs-script-file-from-httpangularjsorg-and-past-it-in-scripts-folder" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 6 : Add a new folder to the project. Name it Scripts. Download angular.js script file from <a href="http://angularjs.org">http://angularjs.org</a>, and past it in Scripts folder.</h5>
+<h5 id="step-7-add-a-new-javascript-file-to-the-scripts-folder-name-it-scriptjs-copy-and-paste-the-following-code"><a name="user-content-step-7-add-a-new-javascript-file-to-the-scripts-folder-name-it-scriptjs-copy-and-paste-the-following-code" href="#step-7-add-a-new-javascript-file-to-the-scripts-folder-name-it-scriptjs-copy-and-paste-the-following-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 7 : Add a new JavaScript file to the Scripts folder. Name it Script.js. Copy and paste the following code.</h5>
+<pre><code>/// &lt;reference path="angular.min.js" /&gt;
+
+var app = angular
+        .module("myModule", [])
+        .controller("myController", function ($scope, $http) {
+
+            $http.get("EmployeeService.asmx/GetAllEmployees")
+                 .then(function (response) {
+                     $scope.employees = response.data;
+                 });
+        });
+</code></pre>
+<h5 id="step-8-add-a-new-stylesheet-to-the-project-name-it-stylescss-copy-and-paste-the-following-styles-in-it"><a name="user-content-step-8-add-a-new-stylesheet-to-the-project-name-it-stylescss-copy-and-paste-the-following-styles-in-it" href="#step-8-add-a-new-stylesheet-to-the-project-name-it-stylescss-copy-and-paste-the-following-styles-in-it" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 8 : Add a new stylesheet to the project. Name it Styles.css. Copy and paste the following styles in it.</h5>
+<pre><code>body {
+    font-family: Arial;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+th {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: left;
+}
+</code></pre>
+<h5 id="step-9-add-an-html-page-to-the-aspnet-project-copy-and-paste-the-following-html-and-angular-code"><a name="user-content-step-9-add-an-html-page-to-the-aspnet-project-copy-and-paste-the-following-html-and-angular-code" href="#step-9-add-an-html-page-to-the-aspnet-project-copy-and-paste-the-following-html-and-angular-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 9 : Add an HTML page to the ASP.NET project. Copy and paste the following HTML and Angular code</h5>
 <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
 &lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;script src="Scripts/angular.js"&gt;&lt;/script&gt;
+    &lt;script src="Scripts/Script.js"&gt;&lt;/script&gt;
+    &lt;link href="Styles.css" rel="stylesheet" /&gt;
 &lt;/head&gt;
-&lt;body&gt;
-    &lt;div ng-app&gt;
-        10 + 20 = {{ 10 + 20 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        40 + 50 = {{ 40 + 50 }}
+&lt;body ng-app="myModule"&gt;
+    &lt;div ng-controller="myController"&gt;
+        &lt;table&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Id&lt;/th&gt;
+                    &lt;th&gt;Name&lt;/th&gt;
+                    &lt;th&gt;Gender&lt;/th&gt;
+                    &lt;th&gt;Salary&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                &lt;tr ng-repeat="employee in employees"&gt;
+                    &lt;td&gt;{{employee.id}}&lt;/td&gt;
+                    &lt;td&gt;{{employee.name}}&lt;/td&gt;
+                    &lt;td&gt;{{employee.gender}}&lt;/td&gt;
+                    &lt;td&gt;{{employee.salary}}&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
     &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-<h4 id="result"><a name="user-content-result" href="#result" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        10 + 20 = 30
-        40 + 50 = {{ 40 + 50 }}
-</code></pre>
-<h5 id="htmlpage1html_1"><a name="user-content-htmlpage1html_1" href="#htmlpage1html_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        10 + 20 = {{ 10 + 20 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        40 + 50 = {{ 40 + 50 }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_1"><a name="user-content-result_1" href="#result_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        10 + 20 = 30
-        40 + 50 = 90
-</code></pre>
-<h5 id="htmlpage1html_2"><a name="user-content-htmlpage1html_2" href="#htmlpage1html_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ 1 == 2 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        {{ 1 == 1 }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_2"><a name="user-content-result_2" href="#result_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        false
-        true
-</code></pre>
-<h5 id="htmlpage1html_3"><a name="user-content-htmlpage1html_3" href="#htmlpage1html_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ { name:"fuyun", age:24 }.name }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_3"><a name="user-content-result_3" href="#result_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        fuyun
-</code></pre>
-<h5 id="htmlpage1html_4"><a name="user-content-htmlpage1html_4" href="#htmlpage1html_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ ['fuyun', 'fuxing', 'fujian'][2] }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_4"><a name="user-content-result_4" href="#result_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        fujian
 </code></pre></article></body></html>

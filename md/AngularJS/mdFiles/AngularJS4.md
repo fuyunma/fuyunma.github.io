@@ -2,13 +2,13 @@
 
 ## In this session we will learn
 
-    Use of ng-src directive
+Use of ng-src directive
 
-    Using a binding expression with the image src attribute,results in a 404 error.
-    That's because as soon as the DOM is in our part at that point a request issued to load that image from the server at that point the angularJS binding expression is not evaluated,so it's using this double curly brace country.flag and closing double curly brace as the part to load the image from and we don't have an image at that part in fact that's not a valid part so that's why we get this 404 error.
+###### Using a binding expression with the image src attribute,results in a 404 error.
+That's because as soon as the DOM is in our part at that point a request issued to load that image from the server at that point the angularJS binding expression is not evaluated,so it's using this double curly brace country.flag and closing double curly brace as the part to load the image from and we don't have an image at that part in fact that's not a valid part so that's why we get this 404 error.
 
-    The image can be found at that part then how is it displaying the image that we see right here?
-    The reason we're seeing this image because a second request is made in order to load that image after the binding expression that we have specified as the value for the source attribute is evaluated,so in fact,there are two request made to the server to load that image,one is loaded as soon as the dorm is part at that point the binding is expression is not evaluated,so obviously,you know whick is an invalid part here it can't find the image,so we get that 404 error that we see in the developer tools.
+###### The image can be found at that part then how is it displaying the image that we see right here?
+The reason we're seeing this image because a second request is made in order to load that image after the binding expression that we have specified as the value for the source attribute is evaluated,so in fact,there are two request made to the server to load that image,one is loaded as soon as the dorm is part at that point the binding is expression is not evaluated,so obviously,you know whick is an invalid part here it can't find the image,so we get that 404 error that we see in the developer tools.
 
 ![](../img/TwoRequest.png)    
 
@@ -57,7 +57,7 @@
 ![](../img/ImgSrcError.png)
 
 ######Reason for the 404 error:
-    As soon as the DOM is parsed,an attempt is made is to fetch the image from the server.At this point,AngularJS binding expression that is specified with the src attribute is not evaluated.Hence 404(not found) error.
+As soon as the DOM is parsed,an attempt is made is to fetch the image from the server.At this point,AngularJS binding expression that is specified with the src attribute is not evaluated.Hence 404(not found) error.
 
 ######To fix the 404 error use the ng-src directive : ng-src attribute ensures that a request is issued only after AngularJS has evaluated the binding expression.
 

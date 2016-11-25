@@ -1014,119 +1014,27 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>AngularJS1</title></head><body><article class="markdown-body"><h1 id="part-1-what-is-angularjs"><a name="user-content-part-1-what-is-angularjs" href="#part-1-what-is-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>part 1 - What is AngularJS</h1>
+</style><title>AngularJS39</title></head><body><article class="markdown-body"><h1 id="part-39-angularjs-route-change-events"><a name="user-content-part-39-angularjs-route-change-events" href="#part-39-angularjs-route-change-events" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>part 39 - AngularJS route change events</h1>
 <h2 id="in-this-session-we-will-learn"><a name="user-content-in-this-session-we-will-learn" href="#in-this-session-we-will-learn" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>In this session we will learn</h2>
-<h3 id="1what-is-angularjs"><a name="user-content-1what-is-angularjs" href="#1what-is-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.What is AngularJS</h3>
-<p>AngularJS is a JavaScript framework that helps build web applications.</p>
-<h4 id="httpswwwmadewithangularcom"><a name="user-content-httpswwwmadewithangularcom" href="#httpswwwmadewithangularcom" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>(<a href="https://www.madewithangular.com">https://www.madewithangular.com</a>)</h4>
-<h3 id="2benefits-of-angularjs"><a name="user-content-2benefits-of-angularjs" href="#2benefits-of-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.Benefits of AngularJS</h3>
-<p>(1)Dependency Injection 依赖注入<br />
-(2)Two Way Data-Binding 双向数据绑定</p>
-<p><img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/Model_View.png" /></p>
-<p>(3)Testing 测试（单元测试 &amp; 端到端测试）<br />
-(4)Model View Controller 模型 视图 控制器<br />
-(5)Directives,Filters,etc… Directive指令，过滤器，等等</p>
-<h4 id="httpsangularjsorg-download-angularjs"><a name="user-content-httpsangularjsorg-download-angularjs" href="#httpsangularjsorg-download-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>(<a href="https://angularjs.org-----Download">https://angularjs.org-----Download</a> AngularJS)</h4>
-<h3 id="3a-simple-angular-example"><a name="user-content-3a-simple-angular-example" href="#3a-simple-angular-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.A Simple angular example</h3>
-<h5 id="htmlpage1html"><a name="user-content-htmlpage1html" href="#htmlpage1html" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div ng-app&gt;
-        10 + 20 = {{ 10 + 20 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        40 + 50 = {{ 40 + 50 }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<h6 id="1different-events-that-are-triggered-when-a-route-change-occurs-in-an-angular-application"><a name="user-content-1different-events-that-are-triggered-when-a-route-change-occurs-in-an-angular-application" href="#1different-events-that-are-triggered-when-a-route-change-occurs-in-an-angular-application" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.Different events that are triggered when a route change occurs in an angular application.</h6>
+<h6 id="2logging-the-events-and-event-handler-parameters-to-inspect-their-respective-properties"><a name="user-content-2logging-the-events-and-event-handler-parameters-to-inspect-their-respective-properties" href="#2logging-the-events-and-event-handler-parameters-to-inspect-their-respective-properties" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.Logging the events and event handler parameters to inspect their respective properties.(记录事件和事件处理参数来检查他们各自的属性)</h6>
+<h5 id="when-route-navigation-occurs-in-an-angular-application-the-following-events-are-triggered"><a name="user-content-when-route-navigation-occurs-in-an-angular-application-the-following-events-are-triggered" href="#when-route-navigation-occurs-in-an-angular-application-the-following-events-are-triggered" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>When route navigation occurs in an Angular application, the following events are triggered.</h5>
+<pre><code>1.$locationChangeStart
+2.$routeChangeStart
+3.$locationChangeSuccess
+4.$routeChangeSuccess
 </code></pre>
-<h4 id="result"><a name="user-content-result" href="#result" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        10 + 20 = 30
-        40 + 50 = {{ 40 + 50 }}
+<p><img src="///C://Users/NM-117/Desktop/AngularJS/img/routeChangeEvents1.png" alt=""></p>
+<p style="text-indent:30px;">
+    We are going to /courses from there and look at that as soon as a route navigation occurs,those are the four event start that triggered:(按事件触发的先后顺序排序如下)
+</p>
+
+<pre><code>$routeChangeStart
+$locationChangeStart
+$locationChangeSuccess
+$routeChangeSuccess
 </code></pre>
-<h5 id="htmlpage1html_1"><a name="user-content-htmlpage1html_1" href="#htmlpage1html_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        10 + 20 = {{ 10 + 20 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        40 + 50 = {{ 40 + 50 }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_1"><a name="user-content-result_1" href="#result_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        10 + 20 = 30
-        40 + 50 = 90
-</code></pre>
-<h5 id="htmlpage1html_2"><a name="user-content-htmlpage1html_2" href="#htmlpage1html_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ 1 == 2 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        {{ 1 == 1 }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_2"><a name="user-content-result_2" href="#result_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        false
-        true
-</code></pre>
-<h5 id="htmlpage1html_3"><a name="user-content-htmlpage1html_3" href="#htmlpage1html_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ { name:"fuyun", age:24 }.name }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_3"><a name="user-content-result_3" href="#result_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        fuyun
-</code></pre>
-<h5 id="htmlpage1html_4"><a name="user-content-htmlpage1html_4" href="#htmlpage1html_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ ['fuyun', 'fuxing', 'fujian'][2] }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_4"><a name="user-content-result_4" href="#result_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        fujian
-</code></pre></article></body></html>
+<p><img src="///C://Users/NM-117/Desktop/AngularJS/img/routeChangeEvents2.png" alt=""></p>
+<p style="text-indent:30px;">
+    When we navigate to courses, look at that $routeChangeStart fired and the first parameter here is the event itself. So when we expend this have a lot of information about that event, and then we have the next parameter which contains information about the next route,so we were on /students and we navigated to /courses,so the /courses is the next route. And look at that the next parameter has got $$route and when we expand that, it has got originalPath and look at that originalPath is having a value /courses the URL that we are navigating to the next route. And the third parameter is the current parameter which contains information about the current, again this current parameter has got $$route and it also has got originalPath property which contains information about the current route. So you can inspect these parameters to see all the properties they have. And then we have a $locationChangeStart event.So the first parameter again here is the event itself notice $locationChangeStart, and then look at the next and current parameters. You know next and current parameters have the full next and current URLs.So logging these parameters will definitely give us some valuable information.
+</p></article></body></html>

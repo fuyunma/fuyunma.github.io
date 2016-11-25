@@ -2,11 +2,11 @@
 
 ## In this session we will learn
     
-    How to handle events in AngularJS
+How to handle events in AngularJS
 
-    1.Display the list of technologies in a table
-    2.Provide the ability to like and dislike a technology
-    3.Increment the likes and dislikes when the respective buttons are clicked
+1.Display the list of technologies in a table
+2.Provide the ability to like and dislike a technology
+3.Increment the likes and dislikes when the respective buttons are clicked
 
 #####    Script.js
     /// <reference path = "angular.min.js"/>
@@ -32,7 +32,7 @@
                         }
                     });
 
-    In the controller function we have 2 methods to increment likes and dislikes.Both the functions have the technology object that we want to like or dislike as a parameter.
+In the controller function we have 2 methods to increment likes and dislikes.Both the functions have the technology object that we want to like or dislike as a parameter.
 
 #####    HtmlPage1.html
     <!DOCTYPE html>
@@ -69,7 +69,7 @@
     </body>
     </html>
 
-    IncrementLikes() and IncrementDislikes() function are associated with the respective buttons.When any of these buttons are clicked,the corresponding technology object is automatically passed to the function,and the likes or dislikes property is incremented depending on which button is clicked.
+IncrementLikes() and IncrementDislikes() function are associated with the respective buttons.When any of these buttons are clicked,the corresponding technology object is automatically passed to the function,and the likes or dislikes property is incremented depending on which button is clicked.
 
 #####    Styles.css
     table{

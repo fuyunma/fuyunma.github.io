@@ -1014,119 +1014,37 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>AngularJS1</title></head><body><article class="markdown-body"><h1 id="part-1-what-is-angularjs"><a name="user-content-part-1-what-is-angularjs" href="#part-1-what-is-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>part 1 - What is AngularJS</h1>
+</style><title>AngularJS23</title></head><body><article class="markdown-body"><h1 id="part-23-angularjs-routing-tutorial"><a name="user-content-part-23-angularjs-routing-tutorial" href="#part-23-angularjs-routing-tutorial" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>part 23 - AngularJS Routing Tutorial</h1>
 <h2 id="in-this-session-we-will-learn"><a name="user-content-in-this-session-we-will-learn" href="#in-this-session-we-will-learn" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>In this session we will learn</h2>
-<h3 id="1what-is-angularjs"><a name="user-content-1what-is-angularjs" href="#1what-is-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.What is AngularJS</h3>
-<p>AngularJS is a JavaScript framework that helps build web applications.</p>
-<h4 id="httpswwwmadewithangularcom"><a name="user-content-httpswwwmadewithangularcom" href="#httpswwwmadewithangularcom" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>(<a href="https://www.madewithangular.com">https://www.madewithangular.com</a>)</h4>
-<h3 id="2benefits-of-angularjs"><a name="user-content-2benefits-of-angularjs" href="#2benefits-of-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.Benefits of AngularJS</h3>
-<p>(1)Dependency Injection 依赖注入<br />
-(2)Two Way Data-Binding 双向数据绑定</p>
-<p><img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/Model_View.png" /></p>
-<p>(3)Testing 测试（单元测试 &amp; 端到端测试）<br />
-(4)Model View Controller 模型 视图 控制器<br />
-(5)Directives,Filters,etc… Directive指令，过滤器，等等</p>
-<h4 id="httpsangularjsorg-download-angularjs"><a name="user-content-httpsangularjsorg-download-angularjs" href="#httpsangularjsorg-download-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>(<a href="https://angularjs.org-----Download">https://angularjs.org-----Download</a> AngularJS)</h4>
-<h3 id="3a-simple-angular-example"><a name="user-content-3a-simple-angular-example" href="#3a-simple-angular-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.A Simple angular example</h3>
-<h5 id="htmlpage1html"><a name="user-content-htmlpage1html" href="#htmlpage1html" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
+<pre><code>AngularJS routing
+</code></pre>
+<h6 id="in-general-as-the-application-becomes-complex-you-will-have-more-than-one-view-in-the-application-lets-say-you-are-building-a-single-page-application-for-a-training-institute-and-you-have-the-following-views"><a name="user-content-in-general-as-the-application-becomes-complex-you-will-have-more-than-one-view-in-the-application-lets-say-you-are-building-a-single-page-application-for-a-training-institute-and-you-have-the-following-views" href="#in-general-as-the-application-becomes-complex-you-will-have-more-than-one-view-in-the-application-lets-say-you-are-building-a-single-page-application-for-a-training-institute-and-you-have-the-following-views" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>In general, as the application becomes complex you will have more than one view in the application. Let&rsquo;s say you are building a single page application for a training institute and you have the following views</h6>
+<h6 id="home"><a name="user-content-home" href="#home" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>+ Home</h6>
+<h6 id="courses"><a name="user-content-courses" href="#courses" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>+ Courses</h6>
+<h6 id="students"><a name="user-content-students" href="#students" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>+ Students</h6>
+<p>We can take advantage of the Angular routing feature, to have a single layout page, and then inject and swap out different views depending on the URL the end user has requested. </p>
+<h5 id="so-in-our-application-we-will-have-the-following-views"><a name="user-content-so-in-our-application-we-will-have-the-following-views" href="#so-in-our-application-we-will-have-the-following-views" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>So in our application we will have the following views</h5>
+<p><img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/AngularRouting.png" /> </p>
+<h5 id="please-note-the-angularjs-route-module-is-present-in-a-separate-javascript-file"><a name="user-content-please-note-the-angularjs-route-module-is-present-in-a-separate-javascript-file" href="#please-note-the-angularjs-route-module-is-present-in-a-separate-javascript-file" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Please note : The AngularJS Route module is present in a separate JavaScript file.</h5>
+<p>index.html is the main layout view which controls the layout for our single page application that is the website header, the side panel here, the website footer and the main content area. And then depending on the URL that the end user has requested. For example, if the end user requests /home then this home.html view is automatically injected into this layout here which is index.html. Similarly, if someone request /courses, then courses.html will be injected into index.html. Similarly, someone requests /students, then students.html will be injected into this layout view.</p>
+<h5 id="what-is-the-cdn-link-for-angular-route"><a name="user-content-what-is-the-cdn-link-for-angular-route" href="#what-is-the-cdn-link-for-angular-route" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What is the CDN link for angular route?</h5>
+<p>The CDN link is if you go back to the homepage and when we click this download button and look at this, this is the CDN link.<br />
+(不需要下载angular.min.js或angular.js文件，通过CDN link可以直接引入外部的angular.min.js或angular.js文件。如果需要引入外部的angular-route.min.js，只需要复制外部的angular.min.js的CDN link并把名称改为angular-route.min.js即可。)</p>
+<p><img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/CDN_link.png" />.</p>
+<h5 id="indexhtml"><a name="user-content-indexhtml" href="#indexhtml" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>index.html</h5>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
     &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="Scripts/angular.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="Scripts/angular-route.min.js"&gt;&lt;/script&gt;
+    &lt;!-- &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"&gt;&lt;/script&gt; --&gt;
+
+    &lt;!-- Preparing the angular application application to use routing : The AngularJS Route module is present in a separate JavaScript file. You can either download it from AngularJs.org and use it in the application or you can use the CDN link. --&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;div ng-app&gt;
-        10 + 20 = {{ 10 + 20 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        40 + 50 = {{ 40 + 50 }}
-    &lt;/div&gt;
+
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-<h4 id="result"><a name="user-content-result" href="#result" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        10 + 20 = 30
-        40 + 50 = {{ 40 + 50 }}
-</code></pre>
-<h5 id="htmlpage1html_1"><a name="user-content-htmlpage1html_1" href="#htmlpage1html_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        10 + 20 = {{ 10 + 20 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        40 + 50 = {{ 40 + 50 }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_1"><a name="user-content-result_1" href="#result_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        10 + 20 = 30
-        40 + 50 = 90
-</code></pre>
-<h5 id="htmlpage1html_2"><a name="user-content-htmlpage1html_2" href="#htmlpage1html_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ 1 == 2 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        {{ 1 == 1 }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_2"><a name="user-content-result_2" href="#result_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        false
-        true
-</code></pre>
-<h5 id="htmlpage1html_3"><a name="user-content-htmlpage1html_3" href="#htmlpage1html_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ { name:"fuyun", age:24 }.name }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_3"><a name="user-content-result_3" href="#result_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        fuyun
-</code></pre>
-<h5 id="htmlpage1html_4"><a name="user-content-htmlpage1html_4" href="#htmlpage1html_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ ['fuyun', 'fuxing', 'fujian'][2] }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_4"><a name="user-content-result_4" href="#result_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        fujian
 </code></pre></article></body></html>

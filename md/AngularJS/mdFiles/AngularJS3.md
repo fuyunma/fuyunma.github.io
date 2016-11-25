@@ -4,7 +4,7 @@
 
 ### Continue our discussion on controllers in angular
     
-    The job of the controller is to build a model for the view,the controller does this by attaching the model to the scope,the scope object itself is not the model,it's the data that you attach to the scope is the model.
+The job of the controller is to build a model for the view,the controller does this by attaching the model to the scope,the scope object itself is not the model,it's the data that you attach to the scope is the model.
 
 #####    Script.js
     /// <reference path = "angular.min.js"/>
@@ -49,11 +49,11 @@
 ######        Gender : Male
 
 ### What happens if the controller name is misspelled?
-    (When the error message is not really very readable,we've got a lot of including symbols within that msg and this is a URL.When you click ono this URL,it takes you to another page and then on that page we can actually see in a mite readable error message.Now the first question that comes to our mind is why is this error message not readable,that is because we're using the minified version of the angular script,so if you are in the development environment and if you want you no more meat readable error messages,one option you have is to use the uncompressed version of the Angular script.)
+(When the error message is not really very readable,we've got a lot of including symbols within that msg and this is a URL.When you click ono this URL,it takes you to another page and then on that page we can actually see in a mite readable error message.Now the first question that comes to our mind is why is this error message not readable,that is because we're using the minified version of the angular script,so if you are in the development environment and if you want you no more meat readable error messages,one option you have is to use the uncompressed version of the Angular script.)
 
-    When the controller name is misspelled,2 things happen:
-    (1)An error is raised.To see the error,use brower developer tools.
-    (2)The binding expression in the view that are in the scope of the controller will not be evaluated.
+When the controller name is misspelled,2 things happen:
+(1)An error is raised.To see the error,use brower developer tools.
+(2)The binding expression in the view that are in the scope of the controller will not be evaluated.
 
 #####   HtmlPage1.html
     <!DOCTYPE html>
@@ -92,7 +92,7 @@
 
 ### What happens if a property name in the binding expression is misspelled?
 
-    Expression evaluation in angular is forgiving,meaning if you misspell a property name in the binding expression,angular will not report any error.It will simply return null or undefined.
+Expression evaluation in angular is forgiving,meaning if you misspell a property name in the binding expression,angular will not report any error.It will simply return null or undefined.
 
 #####   HtmlPage1.html
     <!DOCTYPE html>
@@ -124,7 +124,7 @@
 
 ### How to create module,controller and register the controller with the module,all in one line?
 
-    Use the method chaining mechanism as shown below
+Use the method chaining mechanism as shown below
 
 #####    Script.js
     /// <reference path = "angular.min.js"/>

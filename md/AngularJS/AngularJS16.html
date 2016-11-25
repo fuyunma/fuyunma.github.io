@@ -1014,119 +1014,146 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>AngularJS1</title></head><body><article class="markdown-body"><h1 id="part-1-what-is-angularjs"><a name="user-content-part-1-what-is-angularjs" href="#part-1-what-is-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>part 1 - What is AngularJS</h1>
+</style><title>AngularJS16</title></head><body><article class="markdown-body"><h1 id="part-16-ng-include-directive"><a name="user-content-part-16-ng-include-directive" href="#part-16-ng-include-directive" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>part 16 - ng-include Directive</h1>
 <h2 id="in-this-session-we-will-learn"><a name="user-content-in-this-session-we-will-learn" href="#in-this-session-we-will-learn" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>In this session we will learn</h2>
-<h3 id="1what-is-angularjs"><a name="user-content-1what-is-angularjs" href="#1what-is-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.What is AngularJS</h3>
-<p>AngularJS is a JavaScript framework that helps build web applications.</p>
-<h4 id="httpswwwmadewithangularcom"><a name="user-content-httpswwwmadewithangularcom" href="#httpswwwmadewithangularcom" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>(<a href="https://www.madewithangular.com">https://www.madewithangular.com</a>)</h4>
-<h3 id="2benefits-of-angularjs"><a name="user-content-2benefits-of-angularjs" href="#2benefits-of-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.Benefits of AngularJS</h3>
-<p>(1)Dependency Injection 依赖注入<br />
-(2)Two Way Data-Binding 双向数据绑定</p>
-<p><img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/Model_View.png" /></p>
-<p>(3)Testing 测试（单元测试 &amp; 端到端测试）<br />
-(4)Model View Controller 模型 视图 控制器<br />
-(5)Directives,Filters,etc… Directive指令，过滤器，等等</p>
-<h4 id="httpsangularjsorg-download-angularjs"><a name="user-content-httpsangularjsorg-download-angularjs" href="#httpsangularjsorg-download-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>(<a href="https://angularjs.org-----Download">https://angularjs.org-----Download</a> AngularJS)</h4>
-<h3 id="3a-simple-angular-example"><a name="user-content-3a-simple-angular-example" href="#3a-simple-angular-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.A Simple angular example</h3>
+<pre><code>ng-include directive in AngularJS
+</code></pre>
+<h6 id="1ng-include-directive-is-used-to-embed-an-html-page-into-another-html-page"><a name="user-content-1ng-include-directive-is-used-to-embed-an-html-page-into-another-html-page" href="#1ng-include-directive-is-used-to-embed-an-html-page-into-another-html-page" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.ng-include directive is used to embed an HTML page into another HTML page.</h6>
+<h6 id="2this-technique-is-extremely-useful-when-you-want-to-reuse-a-specific-view-in-multiple-pages-in-your-application"><a name="user-content-2this-technique-is-extremely-useful-when-you-want-to-reuse-a-specific-view-in-multiple-pages-in-your-application" href="#2this-technique-is-extremely-useful-when-you-want-to-reuse-a-specific-view-in-multiple-pages-in-your-application" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.This technique is extremely useful when you want to reuse a specific view in multiple pages in your application.</h6>
+<h6 id="3the-value-for-ng-include-directive"><a name="user-content-3the-value-for-ng-include-directive" href="#3the-value-for-ng-include-directive" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.The value for ng-include directive :</h6>
+<p>(1)Can be the name of the HTML page that you want to reuse.<br />
+    <div ng-include="'EmployeeList.html'"></div></p>
+<p>(2)Can be a property on the $scope object that points to the reusable HTML page.<br />
+    <div ng-include="employeeList"></div></p>
+<h5 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>写法一：</h5>
+<h5 id="scriptjs"><a name="user-content-scriptjs" href="#scriptjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Script.js</h5>
+<pre><code>/// &lt;reference path = "angular.min.js"/&gt;
+
+var myApp = angular
+                .module("myModule",[])
+                .controller("myController",function($scope){
+
+                    var employees = [
+                            { name : "Ben", gender : "Male", salary : 55000 },
+                            { name : "Sara", gender : "Female", salary : 68000 },
+                            { name : "Mark", gender : "Male", salary : 57000 },
+                            { name : "Pam", gender : "Female", salary : 53000 },
+                            { name : "Todd", gender : "Male", salary : 60000 }
+                        ];
+
+                        $scope.employees = employees;
+                });
+</code></pre>
 <h5 id="htmlpage1html"><a name="user-content-htmlpage1html" href="#htmlpage1html" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
 <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
+&lt;html lang="en" ng-app = "myModule"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
     &lt;title&gt;Document&lt;/title&gt;
+    &lt;link rel="stylesheet" href="../style/Styles.css"&gt;
     &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="../script/Script.js"&gt;&lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;div ng-app&gt;
-        10 + 20 = {{ 10 + 20 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        40 + 50 = {{ 40 + 50 }}
+    &lt;div ng-controller="myController"&gt;
+        &lt;div ng-include="'EmployeeTable.html'"&gt;&lt;/div&gt;
     &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<h4 id="result"><a name="user-content-result" href="#result" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        10 + 20 = 30
-        40 + 50 = {{ 40 + 50 }}
+<h5 id="employeetablehtml"><a name="user-content-employeetablehtml" href="#employeetablehtml" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>EmployeeTable.html</h5>
+<pre><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Gender&lt;/th&gt;
+            &lt;th&gt;Salary&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr ng-repeat="employee in employees"&gt;
+            &lt;td&gt;{{ employee.name }}&lt;/td&gt;
+            &lt;td&gt;{{ employee.gender }}&lt;/td&gt;
+            &lt;td&gt;{{ employee.salary }}&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+<h5 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>写法二：</h5>
+<h5 id="scriptjs_1"><a name="user-content-scriptjs_1" href="#scriptjs_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Script.js</h5>
+<pre><code>/// &lt;reference path = "angular.min.js"/&gt;
+
+var myApp = angular
+                .module("myModule",[])
+                .controller("myController",function($scope){
+
+                    var employees = [
+                            { name : "Ben", gender : "Male", salary : 55000 },
+                            { name : "Sara", gender : "Female", salary : 68000 },
+                            { name : "Mark", gender : "Male", salary : 57000 },
+                            { name : "Pam", gender : "Female", salary : 53000 },
+                            { name : "Todd", gender : "Male", salary : 60000 }
+                        ];
+
+                        $scope.employees = employees;
+                        $scope.employeeView = "EmployeeTable.html";
+                });
 </code></pre>
 <h5 id="htmlpage1html_1"><a name="user-content-htmlpage1html_1" href="#htmlpage1html_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
 <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
+&lt;html lang="en" ng-app = "myModule"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
     &lt;title&gt;Document&lt;/title&gt;
+    &lt;link rel="stylesheet" href="../style/Styles.css"&gt;
     &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="../script/Script.js"&gt;&lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;div&gt;
-        10 + 20 = {{ 10 + 20 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        40 + 50 = {{ 40 + 50 }}
+    &lt;div ng-controller="myController"&gt;
+        &lt;div ng-include="employeeView"&gt;&lt;/div&gt;
     &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<h4 id="result_1"><a name="user-content-result_1" href="#result_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        10 + 20 = 30
-        40 + 50 = 90
-</code></pre>
+<h5 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>扩展小例子：</h5>
 <h5 id="htmlpage1html_2"><a name="user-content-htmlpage1html_2" href="#htmlpage1html_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
 <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
+&lt;html lang="en" ng-app = "myModule"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
     &lt;title&gt;Document&lt;/title&gt;
+    &lt;link rel="stylesheet" href="../style/Styles.css"&gt;
     &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="../script/Script.js"&gt;&lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;div&gt;
-        {{ 1 == 2 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        {{ 1 == 1 }}
+    &lt;div ng-controller="myController"&gt;
+        Select View : 
+        &lt;select ng-model="employeeView"&gt;
+            &lt;option value="EmployeeTable.html"&gt;Table&lt;/option&gt;
+            &lt;option value="EmployeeList.html"&gt;List&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;div ng-include="employeeView"&gt;&lt;/div&gt;
     &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<h4 id="result_2"><a name="user-content-result_2" href="#result_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        false
-        true
+<h5 id="employeelisthtml"><a name="user-content-employeelisthtml" href="#employeelisthtml" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>EmployeeList.html</h5>
+<pre><code>&lt;ul&gt;
+    &lt;li ng-repeat="employee in employees"&gt;
+        {{ employee.name }}
+        &lt;ul&gt;
+            &lt;li&gt;
+                {{ employee.gender }}
+            &lt;/li&gt;
+            &lt;li&gt;
+                {{ employee.salary }}
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
 </code></pre>
-<h5 id="htmlpage1html_3"><a name="user-content-htmlpage1html_3" href="#htmlpage1html_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ { name:"fuyun", age:24 }.name }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_3"><a name="user-content-result_3" href="#result_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        fuyun
-</code></pre>
-<h5 id="htmlpage1html_4"><a name="user-content-htmlpage1html_4" href="#htmlpage1html_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ ['fuyun', 'fuxing', 'fujian'][2] }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_4"><a name="user-content-result_4" href="#result_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        fujian
-</code></pre></article></body></html>
+<h5 id="result"><a name="user-content-result" href="#result" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h5>
+<p><img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/ng-include.png" /></p></article></body></html>

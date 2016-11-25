@@ -1017,8 +1017,7 @@ body .markdown-body
 </style><title>AngularJS3</title></head><body><article class="markdown-body"><h1 id="part-3-controllers-in-angularjs"><a name="user-content-part-3-controllers-in-angularjs" href="#part-3-controllers-in-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>part 3 - Controllers in AngularJS</h1>
 <h2 id="in-this-session-we-will-learn"><a name="user-content-in-this-session-we-will-learn" href="#in-this-session-we-will-learn" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>In this session we will learn</h2>
 <h3 id="continue-our-discussion-on-controllers-in-angular"><a name="user-content-continue-our-discussion-on-controllers-in-angular" href="#continue-our-discussion-on-controllers-in-angular" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Continue our discussion on controllers in angular</h3>
-<pre><code>The job of the controller is to build a model for the view,the controller does this by attaching the model to the scope,the scope object itself is not the model,it's the data that you attach to the scope is the model.
-</code></pre>
+<p>The job of the controller is to build a model for the view,the controller does this by attaching the model to the scope,the scope object itself is not the model,it&rsquo;s the data that you attach to the scope is the model.</p>
 <h5 id="scriptjs"><a name="user-content-scriptjs" href="#scriptjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Script.js</h5>
 <pre><code>/// &lt;reference path = "angular.min.js"/&gt;
 
@@ -1061,12 +1060,10 @@ myApp.controller("myController",function($scope){
 <h6 id="last-name-hastings"><a name="user-content-last-name-hastings" href="#last-name-hastings" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Last Name : Hastings</h6>
 <h6 id="gender-male"><a name="user-content-gender-male" href="#gender-male" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gender : Male</h6>
 <h3 id="what-happens-if-the-controller-name-is-misspelled"><a name="user-content-what-happens-if-the-controller-name-is-misspelled" href="#what-happens-if-the-controller-name-is-misspelled" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What happens if the controller name is misspelled?</h3>
-<pre><code>(When the error message is not really very readable,we've got a lot of including symbols within that msg and this is a URL.When you click ono this URL,it takes you to another page and then on that page we can actually see in a mite readable error message.Now the first question that comes to our mind is why is this error message not readable,that is because we're using the minified version of the angular script,so if you are in the development environment and if you want you no more meat readable error messages,one option you have is to use the uncompressed version of the Angular script.)
-
-When the controller name is misspelled,2 things happen:
-(1)An error is raised.To see the error,use brower developer tools.
-(2)The binding expression in the view that are in the scope of the controller will not be evaluated.
-</code></pre>
+<p>(When the error message is not really very readable,we&rsquo;ve got a lot of including symbols within that msg and this is a URL.When you click ono this URL,it takes you to another page and then on that page we can actually see in a mite readable error message.Now the first question that comes to our mind is why is this error message not readable,that is because we&rsquo;re using the minified version of the angular script,so if you are in the development environment and if you want you no more meat readable error messages,one option you have is to use the uncompressed version of the Angular script.)</p>
+<p>When the controller name is misspelled,2 things happen:<br />
+(1)An error is raised.To see the error,use brower developer tools.<br />
+(2)The binding expression in the view that are in the scope of the controller will not be evaluated.</p>
 <h5 id="htmlpage1html_1"><a name="user-content-htmlpage1html_1" href="#htmlpage1html_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en" ng-app = "myModule"&gt;
@@ -1075,11 +1072,11 @@ When the controller name is misspelled,2 things happen:
     &lt;title&gt;Document&lt;/title&gt;
     &lt;!-- &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt; --&gt;&lt;!-- 控制台不能显示可读的错误原因，是由于使用了压缩版的angular.js文件。 --&gt;
 </code></pre>
-<p><img alt="" src="../img/compressedVersion.png" /><br />
-<img alt="" src="../img/LinkError.png" /></p>
+<p><img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/compressedVersion.png" /><br />
+<img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/LinkError.png" /></p>
 <pre><code>    &lt;script type="text/javascript" src="../script/angular.js"&gt;&lt;/script&gt;&lt;!-- 开发的时候使用非压缩的angular.js文件，在控制台上可以显示可读的错误原因。 --&gt;
 </code></pre>
-<p><img alt="" src="../img/UncompressedVersion.png" /></p>
+<p><img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/UncompressedVersion.png" /></p>
 <pre><code>    &lt;script type="text/javascript" src="../script/Script.js"&gt;&lt;/script&gt;
 &lt;/head&gt;
 &lt;body ng-controller = "myController1"&gt;//the controller name is misspelled
@@ -1100,8 +1097,7 @@ When the controller name is misspelled,2 things happen:
 <h6 id="last-name-employeelastname"><a name="user-content-last-name-employeelastname" href="#last-name-employeelastname" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Last Name : {{ employee.lastName }}</h6>
 <h6 id="gender-employeegender"><a name="user-content-gender-employeegender" href="#gender-employeegender" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gender : {{ employee.gender }}</h6>
 <h3 id="what-happens-if-a-property-name-in-the-binding-expression-is-misspelled"><a name="user-content-what-happens-if-a-property-name-in-the-binding-expression-is-misspelled" href="#what-happens-if-a-property-name-in-the-binding-expression-is-misspelled" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What happens if a property name in the binding expression is misspelled?</h3>
-<pre><code>Expression evaluation in angular is forgiving,meaning if you misspell a property name in the binding expression,angular will not report any error.It will simply return null or undefined.
-</code></pre>
+<p>Expression evaluation in angular is forgiving,meaning if you misspell a property name in the binding expression,angular will not report any error.It will simply return null or undefined.</p>
 <h5 id="htmlpage1html_2"><a name="user-content-htmlpage1html_2" href="#htmlpage1html_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en" ng-app = "myModule"&gt;
@@ -1130,8 +1126,7 @@ When the controller name is misspelled,2 things happen:
 <h6 id="last-name-hastings_1"><a name="user-content-last-name-hastings_1" href="#last-name-hastings_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Last Name : Hastings</h6>
 <h6 id="gender"><a name="user-content-gender" href="#gender" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gender :</h6>
 <h3 id="how-to-create-modulecontroller-and-register-the-controller-with-the-moduleall-in-one-line"><a name="user-content-how-to-create-modulecontroller-and-register-the-controller-with-the-moduleall-in-one-line" href="#how-to-create-modulecontroller-and-register-the-controller-with-the-moduleall-in-one-line" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How to create module,controller and register the controller with the module,all in one line?</h3>
-<pre><code>Use the method chaining mechanism as shown below
-</code></pre>
+<p>Use the method chaining mechanism as shown below</p>
 <h5 id="scriptjs_1"><a name="user-content-scriptjs_1" href="#scriptjs_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Script.js</h5>
 <pre><code>/// &lt;reference path = "angular.min.js"/&gt;
 

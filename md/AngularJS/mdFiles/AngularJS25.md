@@ -4,7 +4,7 @@
 
     Creating the partial templates
 
-###### Add templates folder, include home.html & courses.html & students.html.
+###### Add Templates folder, include home.html & courses.html & students.html.
 
 ##### home.html
     <h1>{{message}}</h1>

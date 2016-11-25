@@ -1014,119 +1014,126 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>AngularJS1</title></head><body><article class="markdown-body"><h1 id="part-1-what-is-angularjs"><a name="user-content-part-1-what-is-angularjs" href="#part-1-what-is-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>part 1 - What is AngularJS</h1>
+</style><title>AngularJS32</title></head><body><article class="markdown-body"><h1 id="part-32-angularjs-controller-as-syntax"><a name="user-content-part-32-angularjs-controller-as-syntax" href="#part-32-angularjs-controller-as-syntax" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>part 32 - AngularJS controller as syntax</h1>
 <h2 id="in-this-session-we-will-learn"><a name="user-content-in-this-session-we-will-learn" href="#in-this-session-we-will-learn" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>In this session we will learn</h2>
-<h3 id="1what-is-angularjs"><a name="user-content-1what-is-angularjs" href="#1what-is-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.What is AngularJS</h3>
-<p>AngularJS is a JavaScript framework that helps build web applications.</p>
-<h4 id="httpswwwmadewithangularcom"><a name="user-content-httpswwwmadewithangularcom" href="#httpswwwmadewithangularcom" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>(<a href="https://www.madewithangular.com">https://www.madewithangular.com</a>)</h4>
-<h3 id="2benefits-of-angularjs"><a name="user-content-2benefits-of-angularjs" href="#2benefits-of-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.Benefits of AngularJS</h3>
-<p>(1)Dependency Injection 依赖注入<br />
-(2)Two Way Data-Binding 双向数据绑定</p>
-<p><img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/Model_View.png" /></p>
-<p>(3)Testing 测试（单元测试 &amp; 端到端测试）<br />
-(4)Model View Controller 模型 视图 控制器<br />
-(5)Directives,Filters,etc… Directive指令，过滤器，等等</p>
-<h4 id="httpsangularjsorg-download-angularjs"><a name="user-content-httpsangularjsorg-download-angularjs" href="#httpsangularjsorg-download-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>(<a href="https://angularjs.org-----Download">https://angularjs.org-----Download</a> AngularJS)</h4>
-<h3 id="3a-simple-angular-example"><a name="user-content-3a-simple-angular-example" href="#3a-simple-angular-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.A Simple angular example</h3>
-<h5 id="htmlpage1html"><a name="user-content-htmlpage1html" href="#htmlpage1html" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div ng-app&gt;
-        10 + 20 = {{ 10 + 20 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        40 + 50 = {{ 40 + 50 }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<pre><code>CONTROLLER AS syntax
 </code></pre>
-<h4 id="result"><a name="user-content-result" href="#result" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        10 + 20 = 30
-        40 + 50 = {{ 40 + 50 }}
+<h5 id="so-far-we-have-been-using-scope-to-expose-the-members-from-the-controller-to-the-view"><a name="user-content-so-far-we-have-been-using-scope-to-expose-the-members-from-the-controller-to-the-view" href="#so-far-we-have-been-using-scope-to-expose-the-members-from-the-controller-to-the-view" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>So far we have been using $scope to expose the members from the controller to the view.</h5>
+<pre><code>app.controller("mainController", function ($scope) {
+    $scope.message = "Hello Angular";
+});
 </code></pre>
-<h5 id="htmlpage1html_1"><a name="user-content-htmlpage1html_1" href="#htmlpage1html_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        10 + 20 = {{ 10 + 20 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        40 + 50 = {{ 40 + 50 }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<h5 id="in-the-example-above-we-are-attaching-message-property-to-scope-which-is-automatically-available-in-the-view"><a name="user-content-in-the-example-above-we-are-attaching-message-property-to-scope-which-is-automatically-available-in-the-view" href="#in-the-example-above-we-are-attaching-message-property-to-scope-which-is-automatically-available-in-the-view" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>In the example above we are attaching message property to $scope, which is automatically available in the view.</h5>
+<pre><code>&lt;h1 ng-controller="mainController"&gt;{{message}}&lt;/h1&gt;
 </code></pre>
-<h4 id="result_1"><a name="user-content-result_1" href="#result_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        10 + 20 = 30
-        40 + 50 = 90
+<h5 id="another-way-that-is-available-to-expose-the-members-from-the-controller-to-the-view-is-by-using-controller-as-syntax-with-this-syntax-there-is-no-need-to-inject-scope-object-in-to-the-controller-function-instead-you-simply-use-this-keyword-as-shown-below"><a name="user-content-another-way-that-is-available-to-expose-the-members-from-the-controller-to-the-view-is-by-using-controller-as-syntax-with-this-syntax-there-is-no-need-to-inject-scope-object-in-to-the-controller-function-instead-you-simply-use-this-keyword-as-shown-below" href="#another-way-that-is-available-to-expose-the-members-from-the-controller-to-the-view-is-by-using-controller-as-syntax-with-this-syntax-there-is-no-need-to-inject-scope-object-in-to-the-controller-function-instead-you-simply-use-this-keyword-as-shown-below" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Another way that is available to expose the members from the controller to the view, is by using CONTROLLER AS syntax. With this syntax, there is no need to inject $scope object in to the controller function, instead you simply use this keyword as shown below.</h5>
+<pre><code>app.controller("mainController", function () {
+    this.message = "Hello Angular";
+});
 </code></pre>
-<h5 id="htmlpage1html_2"><a name="user-content-htmlpage1html_2" href="#htmlpage1html_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ 1 == 2 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        {{ 1 == 1 }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<h5 id="in-the-view-you-use-controller-as-syntax-as-shown-below"><a name="user-content-in-the-view-you-use-controller-as-syntax-as-shown-below" href="#in-the-view-you-use-controller-as-syntax-as-shown-below" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>In the view, you use, CONTROLLER AS syntax as shown below.</h5>
+<pre><code>&lt;h1 ng-controller="mainController as main"&gt;{{main.message}}&lt;/h1&gt;
 </code></pre>
-<h4 id="result_2"><a name="user-content-result_2" href="#result_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        false
-        true
+<h5 id="now-let-us-see-how-we-can-use-this-controller-as-syntax-in-the-example-that-we-worked-with-in-part-31"><a name="user-content-now-let-us-see-how-we-can-use-this-controller-as-syntax-in-the-example-that-we-worked-with-in-part-31" href="#now-let-us-see-how-we-can-use-this-controller-as-syntax-in-the-example-that-we-worked-with-in-part-31" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Now, let us see how we can use this CONTROLLER AS syntax in the example that we worked with in Part 31.</h5>
+<h6 id="code-changes-in-scriptjs-notice-the-changes-highlighted-in-yellow"><a name="user-content-code-changes-in-scriptjs-notice-the-changes-highlighted-in-yellow" href="#code-changes-in-scriptjs-notice-the-changes-highlighted-in-yellow" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Code changes in script.js. Notice the changes highlighted in yellow.</h6>
+<ol>
+<li>In the when() function, notice that we are using CONTROLLER AS syntax</li>
+<li>With in each controller() function we are using this keyword to set the properties that we want to make available in the view</li>
+<li>Notice in studentsController and studentDetailsController we are assigning this keyword to variable vm. vm stands for ViewModel. You can give it any meaningful name you want.</li>
+<li>
+<p>If you use this keyword in then() function as shown below, you would not get the result you expect. That&rsquo;s because &lsquo;this&rsquo; keyword points to the window object when the control comes to then() function. </p>
+<p>.controller(&ldquo;studentsController&rdquo;, function ($http) {<br />
+    $http.get(&ldquo;StudentService.asmx/GetAllStudents&rdquo;)<br />
+                        .then(function (response) {<br />
+                            this.students = response.data;<br />
+                        })<br />
+})</p>
+</li>
+</ol>
+<h6 id="at-this-point-we-also-need-to-modify-all-our-partial-templates"><a name="user-content-at-this-point-we-also-need-to-modify-all-our-partial-templates" href="#at-this-point-we-also-need-to-modify-all-our-partial-templates" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>At this point we also need to modify all our partial templates</h6>
+<h5 id="changes-in-homehtml-use-homectrl-object-to-retrieve-the-message-property-that-the-homecontroller-has-set"><a name="user-content-changes-in-homehtml-use-homectrl-object-to-retrieve-the-message-property-that-the-homecontroller-has-set" href="#changes-in-homehtml-use-homectrl-object-to-retrieve-the-message-property-that-the-homecontroller-has-set" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Changes in home.html : Use homeCtrl object to retrieve the message property that the homeController has set.</h5>
+<pre><code>&lt;h1&gt;{{homeCtrl.message}}&lt;/h1&gt;
+
+&lt;div&gt;
+    PRAGIM Established in 2000 by 3 S/W engineers offers very cost effective training. PRAGIM Speciality in training arena unlike other training institutions
+&lt;/div&gt;
+&lt;ul&gt;
+    &lt;li&gt;Training delivered by real time software experts having more than 10 years of experience.&lt;/li&gt;
+    &lt;li&gt;Realtime projects discussion relating to the possible interview questions.&lt;/li&gt;
+    &lt;li&gt;Trainees can attend training and use lab untill you get a job.&lt;/li&gt;
+    &lt;li&gt;Resume preperation and mock up interviews.&lt;/li&gt;
+    &lt;li&gt;100% placement assistance.&lt;/li&gt;
+    &lt;li&gt;Lab facility.&lt;/li&gt;
+&lt;/ul&gt;
 </code></pre>
-<h5 id="htmlpage1html_3"><a name="user-content-htmlpage1html_3" href="#htmlpage1html_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ { name:"fuyun", age:24 }.name }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<h5 id="changes-in-courseshtml-use-coursesctrl-object-to-retrieve-the-courses-property-that-the-coursescontroller-has-set"><a name="user-content-changes-in-courseshtml-use-coursesctrl-object-to-retrieve-the-courses-property-that-the-coursescontroller-has-set" href="#changes-in-courseshtml-use-coursesctrl-object-to-retrieve-the-courses-property-that-the-coursescontroller-has-set" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Changes in courses.html : Use coursesCtrl object to retrieve the courses property that the coursesController has set.</h5>
+<pre><code>&lt;h1&gt;Courses we offer&lt;/h1&gt;
+&lt;ul&gt;
+    &lt;li ng-repeat="course in coursesCtrl.courses"&gt;
+        {{course}}
+    &lt;/li&gt;
+&lt;/ul&gt;
 </code></pre>
-<h4 id="result_3"><a name="user-content-result_3" href="#result_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        fuyun
+<h5 id="changes-in-studentshtml-use-studentsctrl-object-to-retrieve-the-students-property-that-the-studentscontroller-has-set"><a name="user-content-changes-in-studentshtml-use-studentsctrl-object-to-retrieve-the-students-property-that-the-studentscontroller-has-set" href="#changes-in-studentshtml-use-studentsctrl-object-to-retrieve-the-students-property-that-the-studentscontroller-has-set" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Changes in students.html : Use studentsCtrl object to retrieve the students property that the studentsController has set.</h5>
+<pre><code>&lt;h1&gt;List of Students&lt;/h1&gt;
+&lt;ul&gt;
+    &lt;li ng-repeat="student in studentsCtrl.students"&gt;
+        &lt;a href="students/{{student.id}}"&gt;
+            {{student.name}}
+        &lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
 </code></pre>
-<h5 id="htmlpage1html_4"><a name="user-content-htmlpage1html_4" href="#htmlpage1html_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ ['fuyun', 'fuxing', 'fujian'][2] }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<h5 id="changes-in-studentdetailshtml-use-studentdetailsctrl-object-to-retrieve-the-student-property-that-the-studentdetailscontroller-has-set"><a name="user-content-changes-in-studentdetailshtml-use-studentdetailsctrl-object-to-retrieve-the-student-property-that-the-studentdetailscontroller-has-set" href="#changes-in-studentdetailshtml-use-studentdetailsctrl-object-to-retrieve-the-student-property-that-the-studentdetailscontroller-has-set" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Changes in studentDetails.html : Use studentDetailsCtrl object to retrieve the student property that the studentDetailsController has set.</h5>
+<pre><code>&lt;h1&gt;Student Details&lt;/h1&gt;
+&lt;table style="border:1px solid black"&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Id&lt;/td&gt;
+        &lt;td&gt;{{studentDetailsCtrl.student.id}}&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Name&lt;/td&gt;
+        &lt;td&gt;{{studentDetailsCtrl.student.name}}&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Gender&lt;/td&gt;
+        &lt;td&gt;{{studentDetailsCtrl.student.gender}}&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;City&lt;/td&gt;
+        &lt;td&gt;{{studentDetailsCtrl.student.city}}&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+&lt;h4&gt;&lt;a href="students"&gt;Back to Students list&lt;/a&gt;&lt;/h4&gt;
 </code></pre>
-<h4 id="result_4"><a name="user-content-result_4" href="#result_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        fujian
+<h5 id="you-can-also-use-controller-as-syntax-when-defining-routes-as-shown-below"><a name="user-content-you-can-also-use-controller-as-syntax-when-defining-routes-as-shown-below" href="#you-can-also-use-controller-as-syntax-when-defining-routes-as-shown-below" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>You can also use CONTROLLER AS syntax when defining routes as shown below</h5>
+<pre><code>var app = angular
+            .module("Demo", ["ngRoute"])
+            .config(function ($routeProvider, $locationProvider) {
+                $routeProvider
+                    .when("/home", {
+                        templateUrl: "Templates/home.html",
+                        controller: "homeController",
+                        controllerAs: "homeCtrl"
+                    })
+                    .when("/courses", {
+                        templateUrl: "Templates/courses.html",
+                        controller: "coursesController as coursesCtrl",
+                        controllerAs: "coursesCtrl"
+                    })
+                    .when("/students", {
+                        templateUrl: "Templates/students.html",
+                        controller: "studentsController as studentsCtrl",
+                        controllerAs: "studentsCtrl"
+                    })
+                    .when("/students/:id", {
+                        templateUrl: "Templates/studentDetails.html",
+                        controller: "studentDetailsController as studentDetailsCtrl",
+                        controllerAs: "studentDetailsCtrl"
+                    })
+                    .otherwise({
+                        redirectTo: "/home"
+                    })
+                $locationProvider.html5Mode(true);
+            })
 </code></pre></article></body></html>

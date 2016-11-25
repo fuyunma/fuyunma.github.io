@@ -4,7 +4,7 @@
 
 ### Two way databinding in AngularJS
     
-    The Two Way Data-Binding,keeps the model and the view in sync at all times,that is a change in the model updates the view and a change in the view updates the model.
+The Two Way Data-Binding,keeps the model and the view in sync at all times,that is a change in the model updates the view and a change in the view updates the model.
 
 ######  1.Binding expression updates the view when the model changes 
     {{ message }}.

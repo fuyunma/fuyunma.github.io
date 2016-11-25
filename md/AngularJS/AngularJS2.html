@@ -1016,33 +1016,27 @@ body .markdown-body
 }
 </style><title>AngularJS2</title></head><body><article class="markdown-body"><h1 id="part-2-modules-and-controllers"><a name="user-content-part-2-modules-and-controllers" href="#part-2-modules-and-controllers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>part 2 - Modules and Controllers</h1>
 <h2 id="in-this-session-we-will-learn"><a name="user-content-in-this-session-we-will-learn" href="#in-this-session-we-will-learn" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>In this session we will learn</h2>
-<pre><code>1.What is a module and how to create a module
-2.What is a controller and how to create a controller
-3.How to register a controller with the module
-4.How to use the module that we create to bootstrap the angular application
-</code></pre>
+<p>1.What is a module and how to create a module<br />
+2.What is a controller and how to create a controller<br />
+3.How to register a controller with the module<br />
+4.How to use the module that we create to bootstrap the angular application</p>
 <h3 id="what-is-a-module-in-angularjs"><a name="user-content-what-is-a-module-in-angularjs" href="#what-is-a-module-in-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What is a module in AngularJS</h3>
-<pre><code>A module is a container for different parts of your application i.e controllers,services,directives,filters,etc.
-
-You can think of a module as a Main() method in other types of applications.
-</code></pre>
+<p>A module is a container for different parts of your application i.e controllers,services,directives,filters,etc.</p>
+<p>You can think of a module as a Main() method in other types of applications.</p>
 <h3 id="how-to-create-a-module"><a name="user-content-how-to-create-a-module" href="#how-to-create-a-module" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How to create a module</h3>
-<pre><code>Use the angular object's module() method to create a module.
-</code></pre>
+<p>Use the angular object&rsquo;s module() method to create a module.</p>
 <h5 id="var-myapp-angularmodulemymodule"><a name="user-content-var-myapp-angularmodulemymodule" href="#var-myapp-angularmodulemymodule" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>var myApp = angular.module(&ldquo;myModule&rdquo;,[]);</h5>
 <pre><code>                                |         |
               所创建的module的名称     module的依赖关系(一个module可以依赖于其他的modules)
 </code></pre>
 <h3 id="what-is-a-controller-in-angular"><a name="user-content-what-is-a-controller-in-angular" href="#what-is-a-controller-in-angular" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What is a controller in angular</h3>
-<pre><code>In angular a controller is a JavaScript function.The job of the controller is to build a model for the view to display.
-</code></pre>
+<p>In angular a controller is a JavaScript function.The job of the controller is to build a model for the view to display.</p>
 <h3 id="how-to-create-a-controller-in-angular"><a name="user-content-how-to-create-a-controller-in-angular" href="#how-to-create-a-controller-in-angular" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How to create a controller in angular</h3>
 <h5 id="var-mycontroller-functionscope"><a name="user-content-var-mycontroller-functionscope" href="#var-mycontroller-functionscope" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>var myController = function($scope){</h5>
 <pre><code>        $scope.message = "AngularJS Tutorial";
 </code></pre>
 <h5 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>}</h5>
-<pre><code>$scope is an angular object that is passed to this controller function by the angular framework automatically.The $scope object is provided by the framework within the view.
-</code></pre>
+<p>$scope is an angular object that is passed to this controller function by the angular framework automatically.The $scope object is provided by the framework within the view.</p>
 <h5 id="scriptjs"><a name="user-content-scriptjs" href="#scriptjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Script.js</h5>
 <pre><code>    /// &lt;reference path = "angular.min.js"/&gt;
 
@@ -1106,4 +1100,4 @@ You can think of a module as a Main() method in other types of applications.
 <h5 id="result_1"><a name="user-content-result_1" href="#result_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h5>
 <h6 id="angularjs-tutorial_1"><a name="user-content-angularjs-tutorial_1" href="#angularjs-tutorial_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>AngularJS Tutorial</h6>
 <h6 id="angularjs-tutorial_2"><a name="user-content-angularjs-tutorial_2" href="#angularjs-tutorial_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>AngularJS Tutorial</h6>
-<p><img alt="" src="../img/Module_Controller.png" /></p></article></body></html>
+<p><img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/Module_Controller.png" /></p></article></body></html>

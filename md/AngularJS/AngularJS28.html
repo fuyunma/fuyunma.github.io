@@ -1014,119 +1014,37 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>AngularJS1</title></head><body><article class="markdown-body"><h1 id="part-1-what-is-angularjs"><a name="user-content-part-1-what-is-angularjs" href="#part-1-what-is-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>part 1 - What is AngularJS</h1>
+</style><title>AngularJS28</title></head><body><article class="markdown-body"><h1 id="part-28-angularjs-default-route"><a name="user-content-part-28-angularjs-default-route" href="#part-28-angularjs-default-route" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>part 28 - AngularJS Default Route</h1>
 <h2 id="in-this-session-we-will-learn"><a name="user-content-in-this-session-we-will-learn" href="#in-this-session-we-will-learn" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>In this session we will learn</h2>
-<h3 id="1what-is-angularjs"><a name="user-content-1what-is-angularjs" href="#1what-is-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.What is AngularJS</h3>
-<p>AngularJS is a JavaScript framework that helps build web applications.</p>
-<h4 id="httpswwwmadewithangularcom"><a name="user-content-httpswwwmadewithangularcom" href="#httpswwwmadewithangularcom" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>(<a href="https://www.madewithangular.com">https://www.madewithangular.com</a>)</h4>
-<h3 id="2benefits-of-angularjs"><a name="user-content-2benefits-of-angularjs" href="#2benefits-of-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.Benefits of AngularJS</h3>
-<p>(1)Dependency Injection 依赖注入<br />
-(2)Two Way Data-Binding 双向数据绑定</p>
-<p><img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/Model_View.png" /></p>
-<p>(3)Testing 测试（单元测试 &amp; 端到端测试）<br />
-(4)Model View Controller 模型 视图 控制器<br />
-(5)Directives,Filters,etc… Directive指令，过滤器，等等</p>
-<h4 id="httpsangularjsorg-download-angularjs"><a name="user-content-httpsangularjsorg-download-angularjs" href="#httpsangularjsorg-download-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>(<a href="https://angularjs.org-----Download">https://angularjs.org-----Download</a> AngularJS)</h4>
-<h3 id="3a-simple-angular-example"><a name="user-content-3a-simple-angular-example" href="#3a-simple-angular-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.A Simple angular example</h3>
-<h5 id="htmlpage1html"><a name="user-content-htmlpage1html" href="#htmlpage1html" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div ng-app&gt;
-        10 + 20 = {{ 10 + 20 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        40 + 50 = {{ 40 + 50 }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<pre><code>How to set a default route in Angular?
 </code></pre>
-<h4 id="result"><a name="user-content-result" href="#result" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        10 + 20 = 30
-        40 + 50 = {{ 40 + 50 }}
+<h6 id="at-the-moment-the-problem-is-that-if-you-try-to-navigate-to-a-route-that-is-not-configured-you-will-see-only-the-layout-page-without-any-partial-template-injected-into-it"><a name="user-content-at-the-moment-the-problem-is-that-if-you-try-to-navigate-to-a-route-that-is-not-configured-you-will-see-only-the-layout-page-without-any-partial-template-injected-into-it" href="#at-the-moment-the-problem-is-that-if-you-try-to-navigate-to-a-route-that-is-not-configured-you-will-see-only-the-layout-page-without-any-partial-template-injected-into-it" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>At the moment the problem is that, if you try to navigate to a route that is not configured, you will see only the layout page without any partial template injected into it.</h6>
+<h6 id="for-example-if-you-navigate-to-httplocalhost51983abc-since-abc-is-not-a-configured-route-you-will-see-the-layout-page-indexhtml-as-shown-below"><a name="user-content-for-example-if-you-navigate-to-httplocalhost51983abc-since-abc-is-not-a-configured-route-you-will-see-the-layout-page-indexhtml-as-shown-below" href="#for-example-if-you-navigate-to-httplocalhost51983abc-since-abc-is-not-a-configured-route-you-will-see-the-layout-page-indexhtml-as-shown-below" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>For example if you navigate to <a href="http://localhost:51983/ABC">http://localhost:51983/ABC</a>, since ABC is not a configured route you will see the layout page (index.html) as shown below.</h6>
+<p><img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/AngularJS_DefaultRoute.png" /></p>
+<h5 id="you-will-also-have-this-same-problem-if-you-navigate-to-the-root-of-the-site-iehttplocalhost51983-the-reason-angular-is-displaying-the-empty-layout-template-in-both-these-cases-is-because-it-does-not-know-what-partial-template-to-inject-we-want-angular-to-redirect-to-default-route-if-the-user-is-trying-to-navigate-to-a-route-that-is-not-configured"><a name="user-content-you-will-also-have-this-same-problem-if-you-navigate-to-the-root-of-the-site-iehttplocalhost51983-the-reason-angular-is-displaying-the-empty-layout-template-in-both-these-cases-is-because-it-does-not-know-what-partial-template-to-inject-we-want-angular-to-redirect-to-default-route-if-the-user-is-trying-to-navigate-to-a-route-that-is-not-configured" href="#you-will-also-have-this-same-problem-if-you-navigate-to-the-root-of-the-site-iehttplocalhost51983-the-reason-angular-is-displaying-the-empty-layout-template-in-both-these-cases-is-because-it-does-not-know-what-partial-template-to-inject-we-want-angular-to-redirect-to-default-route-if-the-user-is-trying-to-navigate-to-a-route-that-is-not-configured" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>You will also have this same problem if you navigate to the root of the site i.ehttp://localhost:51983. The reason angular is displaying the empty layout template in both these cases, is because it does not know what partial template to inject. We want angular to redirect to default route if the user is trying to navigate to a route that is not configured.</h5>
+<h6 id="how-to-configure-the-default-route-in-angular-well-that-is-straight-forward-all-you-need-is-the-following-line-in-config-function-in-scriptjs-file"><a name="user-content-how-to-configure-the-default-route-in-angular-well-that-is-straight-forward-all-you-need-is-the-following-line-in-config-function-in-scriptjs-file" href="#how-to-configure-the-default-route-in-angular-well-that-is-straight-forward-all-you-need-is-the-following-line-in-config-function-in-scriptjs-file" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How to configure the default route in Angular : Well that is straight forward. All you need is the following line in config() function in script.js file</h6>
+<pre><code>.otherwise({
+    redirectTo: "/home"
+})
 </code></pre>
-<h5 id="htmlpage1html_1"><a name="user-content-htmlpage1html_1" href="#htmlpage1html_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        10 + 20 = {{ 10 + 20 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        40 + 50 = {{ 40 + 50 }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_1"><a name="user-content-result_1" href="#result_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        10 + 20 = 30
-        40 + 50 = 90
-</code></pre>
-<h5 id="htmlpage1html_2"><a name="user-content-htmlpage1html_2" href="#htmlpage1html_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ 1 == 2 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        {{ 1 == 1 }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_2"><a name="user-content-result_2" href="#result_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        false
-        true
-</code></pre>
-<h5 id="htmlpage1html_3"><a name="user-content-htmlpage1html_3" href="#htmlpage1html_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ { name:"fuyun", age:24 }.name }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_3"><a name="user-content-result_3" href="#result_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        fuyun
-</code></pre>
-<h5 id="htmlpage1html_4"><a name="user-content-htmlpage1html_4" href="#htmlpage1html_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ ['fuyun', 'fuxing', 'fujian'][2] }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_4"><a name="user-content-result_4" href="#result_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        fujian
+<h5 id="with-the-above-change-the-code-in-config-function-should-be-as-shown-below"><a name="user-content-with-the-above-change-the-code-in-config-function-should-be-as-shown-below" href="#with-the-above-change-the-code-in-config-function-should-be-as-shown-below" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>With the above change the code in config() function should be as shown below.</h5>
+<pre><code>.config(function ($routeProvider, $locationProvider) {
+    $routeProvider
+        .when("/home", {
+            templateUrl: "Templates/home.html",
+            controller: "homeController"
+        })
+        .when("/courses", {
+            templateUrl: "Templates/courses.html",
+            controller: "coursesController"
+        })
+        .when("/students", {
+            templateUrl: "Templates/students.html",
+            controller: "studentsController"
+        })
+        .otherwise({
+            redirectTo: "/home"
+        })
+    $locationProvider.html5Mode(true);
+})
 </code></pre></article></body></html>

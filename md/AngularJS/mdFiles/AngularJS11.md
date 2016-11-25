@@ -2,9 +2,9 @@
 
 ## In this session we will learn
 
-    How to implement search in Angular using search filter
+How to implement search in Angular using search filter
 
-    As we type in the search textbox,all the columns in the table must be searched and only the matching rows should be displayed.
+As we type in the search textbox,all the columns in the table must be searched and only the matching rows should be displayed.
 
 ##### 搜索所有column中包含搜索框中指定字符的rows
 

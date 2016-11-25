@@ -1014,119 +1014,103 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>AngularJS1</title></head><body><article class="markdown-body"><h1 id="part-1-what-is-angularjs"><a name="user-content-part-1-what-is-angularjs" href="#part-1-what-is-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>part 1 - What is AngularJS</h1>
+</style><title>AngularJS21</title></head><body><article class="markdown-body"><h1 id="part-21-angularjs-anchorscroll-example"><a name="user-content-part-21-angularjs-anchorscroll-example" href="#part-21-angularjs-anchorscroll-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>part 21 - AngularJS anchorscroll example</h1>
 <h2 id="in-this-session-we-will-learn"><a name="user-content-in-this-session-we-will-learn" href="#in-this-session-we-will-learn" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>In this session we will learn</h2>
-<h3 id="1what-is-angularjs"><a name="user-content-1what-is-angularjs" href="#1what-is-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.What is AngularJS</h3>
-<p>AngularJS is a JavaScript framework that helps build web applications.</p>
-<h4 id="httpswwwmadewithangularcom"><a name="user-content-httpswwwmadewithangularcom" href="#httpswwwmadewithangularcom" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>(<a href="https://www.madewithangular.com">https://www.madewithangular.com</a>)</h4>
-<h3 id="2benefits-of-angularjs"><a name="user-content-2benefits-of-angularjs" href="#2benefits-of-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.Benefits of AngularJS</h3>
-<p>(1)Dependency Injection 依赖注入<br />
-(2)Two Way Data-Binding 双向数据绑定</p>
-<p><img alt="" src="///C://Users/NM-117/Desktop/AngularJS/img/Model_View.png" /></p>
-<p>(3)Testing 测试（单元测试 &amp; 端到端测试）<br />
-(4)Model View Controller 模型 视图 控制器<br />
-(5)Directives,Filters,etc… Directive指令，过滤器，等等</p>
-<h4 id="httpsangularjsorg-download-angularjs"><a name="user-content-httpsangularjsorg-download-angularjs" href="#httpsangularjsorg-download-angularjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>(<a href="https://angularjs.org-----Download">https://angularjs.org-----Download</a> AngularJS)</h4>
-<h3 id="3a-simple-angular-example"><a name="user-content-3a-simple-angular-example" href="#3a-simple-angular-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.A Simple angular example</h3>
+<pre><code>$anchorscroll service
+</code></pre>
+<h5 id="anchorscroll-service-is-used-to-jump-to-a-specified-element-on-the-page"><a name="user-content-anchorscroll-service-is-used-to-jump-to-a-specified-element-on-the-page" href="#anchorscroll-service-is-used-to-jump-to-a-specified-element-on-the-page" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>$anchorscroll service is used to jump to a specified element on the page.</h5>
+<h6 id="location-service-hash-method-appends-hash-fragments-to-the-url"><a name="user-content-location-service-hash-method-appends-hash-fragments-to-the-url" href="#location-service-hash-method-appends-hash-fragments-to-the-url" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>$location service hash method appends hash fragments to the URL.</h6>
+<h5 id="anchorscroll-method-reads-the-hash-fragment-in-the-url-and-jumps-to-that-element-on-the-page"><a name="user-content-anchorscroll-method-reads-the-hash-fragment-in-the-url-and-jumps-to-that-element-on-the-page" href="#anchorscroll-method-reads-the-hash-fragment-in-the-url-and-jumps-to-that-element-on-the-page" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>$anchorscroll() method reads the hash fragment in the URL and jumps to that element on the page.</h5>
+<h6 id="yoffset-property-specifies-the-vertical-scroll-offset"><a name="user-content-yoffset-property-specifies-the-vertical-scroll-offset" href="#yoffset-property-specifies-the-vertical-scroll-offset" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>yOffset property specifies the vertical scroll-offset.</h6>
+<h5 id="scriptjs"><a name="user-content-scriptjs" href="#scriptjs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Script.js</h5>
+<pre><code>/// &lt;reference path = "angular.min.js"/&gt;
+
+var myApp = angular
+                .module("demoApp",[])
+                .controller("demoController",function($scope, $location, $anchorScroll){
+                    $scope.scrollTo = function(scrollLocation)
+                    {
+                        $location.hash(scrollLocation);//This location service has got this method called hash,it's going to append whatever you provide to that to the URL using a hash symbol.
+
+                        $anchorScroll.yOffset = 20;//Much space between the element and the browser.
+
+                        $anchorScroll();//This method is going to read what we have in the URL.For example,if we have hash top appended,this anchorScroll method is going to read that hash to fragment and automatically scroll to that element on the page.
+                    }
+                });
+</code></pre>
 <h5 id="htmlpage1html"><a name="user-content-htmlpage1html" href="#htmlpage1html" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
 <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
+&lt;html lang="en" ng-app = "demoApp"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
     &lt;title&gt;Document&lt;/title&gt;
+    &lt;link rel="stylesheet" href="../style/Styles.css"&gt;
     &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="../script/Script.js"&gt;&lt;/script&gt;
 &lt;/head&gt;
-&lt;body&gt;
-    &lt;div ng-app&gt;
-        10 + 20 = {{ 10 + 20 }}
-    &lt;/div&gt;
+&lt;body ng-controller="demoController"&gt;
+    &lt;button id="top" ng-click="scrollTo('bottom')"&gt;Go to bottom of the page&lt;/button&gt;
+    &lt;br&gt;&lt;br&gt;
     &lt;div&gt;
-        40 + 50 = {{ 40 + 50 }}
+        &lt;b&gt;What is Angular&lt;/b&gt;
+        &lt;br&gt;
+        AngularJS is a JavaScript framework that helps build applications that run in a web
+        &lt;br&gt;&lt;br&gt;
+        &lt;b&gt;Who developed AngularJS&lt;/b&gt;
+        &lt;br&gt;
+        Goole is the company that developed AngularJS. AngularJS is an open source project,
+        &lt;br&gt;&lt;br&gt;
+        AngularJs is an excellent framework for building both Single Page Application(SPA)
+        &lt;br&gt;&lt;br&gt;
+        There is a website, https://www.madewithangular.com, that has the list of web sites
+        &lt;br&gt;&lt;br&gt;
+        &lt;b&gt;What is Angular&lt;/b&gt;
+        &lt;br&gt;
+        AngularJS is a JavaScript framework that helps build applications that run in a web
+        &lt;br&gt;&lt;br&gt;
+        &lt;b&gt;Who developed AngularJS&lt;/b&gt;
+        &lt;br&gt;
+        Goole is the company that developed AngularJS. AngularJS is an open source project,
+        &lt;br&gt;&lt;br&gt;
+        AngularJs is an excellent framework for building both Single Page Application(SPA)
+        &lt;br&gt;&lt;br&gt;
+        There is a website, https://www.madewithangular.com, that has the list of web sites
+        &lt;br&gt;&lt;br&gt;
+        &lt;b&gt;What is Angular&lt;/b&gt;
+        &lt;br&gt;
+        AngularJS is a JavaScript framework that helps build applications that run in a web
+        &lt;br&gt;&lt;br&gt;
+        &lt;b&gt;Who developed AngularJS&lt;/b&gt;
+        &lt;br&gt;
+        Goole is the company that developed AngularJS. AngularJS is an open source project,
+        &lt;br&gt;&lt;br&gt;
+        AngularJs is an excellent framework for building both Single Page Application(SPA)
+        &lt;br&gt;&lt;br&gt;
+        There is a website, https://www.madewithangular.com, that has the list of web sites
+        &lt;br&gt;&lt;br&gt;
+        &lt;b&gt;What is Angular&lt;/b&gt;
+        &lt;br&gt;
+        AngularJS is a JavaScript framework that helps build applications that run in a web
+        &lt;br&gt;&lt;br&gt;
+        &lt;b&gt;Who developed AngularJS&lt;/b&gt;
+        &lt;br&gt;
+        Goole is the company that developed AngularJS. AngularJS is an open source project,
+        &lt;br&gt;&lt;br&gt;
+        AngularJs is an excellent framework for building both Single Page Application(SPA)
+        &lt;br&gt;&lt;br&gt;
+        There is a website, https://www.madewithangular.com, that has the list of web sites
     &lt;/div&gt;
+    &lt;br&gt;
+    &lt;button id="bottom" ng-click="scrollTo('top')"&gt;Go to top of the page&lt;/button&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<h4 id="result"><a name="user-content-result" href="#result" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        10 + 20 = 30
-        40 + 50 = {{ 40 + 50 }}
-</code></pre>
-<h5 id="htmlpage1html_1"><a name="user-content-htmlpage1html_1" href="#htmlpage1html_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        10 + 20 = {{ 10 + 20 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        40 + 50 = {{ 40 + 50 }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_1"><a name="user-content-result_1" href="#result_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        10 + 20 = 30
-        40 + 50 = 90
-</code></pre>
-<h5 id="htmlpage1html_2"><a name="user-content-htmlpage1html_2" href="#htmlpage1html_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ 1 == 2 }}
-    &lt;/div&gt;
-    &lt;div&gt;
-        {{ 1 == 1 }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_2"><a name="user-content-result_2" href="#result_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        false
-        true
-</code></pre>
-<h5 id="htmlpage1html_3"><a name="user-content-htmlpage1html_3" href="#htmlpage1html_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ { name:"fuyun", age:24 }.name }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_3"><a name="user-content-result_3" href="#result_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        fuyun
-</code></pre>
-<h5 id="htmlpage1html_4"><a name="user-content-htmlpage1html_4" href="#htmlpage1html_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HtmlPage1.html</h5>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="en" ng-app&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script type="text/javascript" src="../script/angular.min.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div&gt;
-        {{ ['fuyun', 'fuxing', 'fujian'][2] }}
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="result_4"><a name="user-content-result_4" href="#result_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>result:</h4>
-<pre><code>        fujian
+<h5 id="stylescss"><a name="user-content-stylescss" href="#stylescss" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Styles.css</h5>
+<pre><code>div{
+    width:400px;
+    border:1px solid black;
+    font-family:Arial;
+    font-size:large;
+    padding:5px;
+}
 </code></pre></article></body></html>

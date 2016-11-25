@@ -59,7 +59,7 @@
 ###### first, the controller code has become a bit complex and it has become a bit large;
 ###### second, if we want to reuse this logic within any other controller then we will have to duplicate this code within that controller, the moment we start duplicating code, the maintainability of the application has gone for a toss.
 
-    We want to encapsulate all this logic and its own service and inject that service into any controller where you need that,the first thing to do here is adding another javascript file to a project.This is the javascript file which is going to contain our custome service.We have the model and on that we have the factory method which we use to create a custom service and register that with angular.Usually the service is an angular of state less.The last thing that is reference that strength serviced or js file on our HTML page.
+We want to encapsulate all this logic and its own service and inject that service into any controller where you need that,the first thing to do here is adding another javascript file to a project.This is the javascript file which is going to contain our custome service.We have the model and on that we have the factory method which we use to create a custom service and register that with angular.Usually the service is an angular of state less.The last thing that is reference that strength serviced or js file on our HTML page.
 
 #####    Script.js(此时controller中的代码变得很简洁)
     /// <reference path = "angular.min.js"/>

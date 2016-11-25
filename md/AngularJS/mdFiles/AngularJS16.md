@@ -9,11 +9,11 @@
 ###### 2.This technique is extremely useful when you want to reuse a specific view in multiple pages in your application.
 
 ###### 3.The value for ng-include directive : 
-     (1)Can be the name of the HTML page that you want to reuse.
-        <div ng-include="'EmployeeList.html'"></div>
+(1)Can be the name of the HTML page that you want to reuse.
+    <div ng-include="'EmployeeList.html'"></div>
 
-     (2)Can be a property on the $scope object that points to the reusable HTML page.
-        <div ng-include="employeeList"></div>
+(2)Can be a property on the $scope object that points to the reusable HTML page.
+    <div ng-include="employeeList"></div>
 
 ##### 写法一：
 

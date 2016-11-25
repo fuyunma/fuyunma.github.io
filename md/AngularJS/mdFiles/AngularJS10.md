@@ -2,7 +2,7 @@
 
 ## In this session we will learn
 
-    How to implement bidirectional sort in AngularJS
+How to implement bidirectional sort in AngularJS
 
 #####    Script.js
     /// <reference path = "angular.min.js"/>

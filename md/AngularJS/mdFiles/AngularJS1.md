@@ -4,19 +4,19 @@
 
 ### 1.What is AngularJS
 
-    AngularJS is a JavaScript framework that helps build web applications.
+AngularJS is a JavaScript framework that helps build web applications.
 ####    (https://www.madewithangular.com)
 
 ### 2.Benefits of AngularJS
 
-    (1)Dependency Injection 依赖注入
-    (2)Two Way Data-Binding 双向数据绑定
+(1)Dependency Injection 依赖注入
+(2)Two Way Data-Binding 双向数据绑定
 
-![](../../img/AngularJS/Model_View.png)
+![](../img/Model_View.png)
 
-    (3)Testing 测试（单元测试 & 端到端测试）
-    (4)Model View Controller 模型 视图 控制器
-    (5)Directives,Filters,etc… Directive指令，过滤器，等等
+(3)Testing 测试（单元测试 & 端到端测试）
+(4)Model View Controller 模型 视图 控制器
+(5)Directives,Filters,etc… Directive指令，过滤器，等等
 ####    (https://angularjs.org-----Download AngularJS)
 
 ### 3.A Simple angular example

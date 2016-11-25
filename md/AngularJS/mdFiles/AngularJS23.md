@@ -9,19 +9,19 @@
 ###### + Courses
 ###### + Students
 
-    We can take advantage of the Angular routing feature, to have a single layout page, and then inject and swap out different views depending on the URL the end user has requested. 
+We can take advantage of the Angular routing feature, to have a single layout page, and then inject and swap out different views depending on the URL the end user has requested. 
 
 ##### So in our application we will have the following views
 ![](../img/AngularRouting.png) 
 
 ##### Please note : The AngularJS Route module is present in a separate JavaScript file.
 
-    index.html is the main layout view which controls the layout for our single page application that is the website header, the side panel here, the website footer and the main content area. And then depending on the URL that the end user has requested. For example, if the end user requests /home then this home.html view is automatically injected into this layout here which is index.html. Similarly, if someone request /courses, then courses.html will be injected into index.html. Similarly, someone requests /students, then students.html will be injected into this layout view.
+index.html is the main layout view which controls the layout for our single page application that is the website header, the side panel here, the website footer and the main content area. And then depending on the URL that the end user has requested. For example, if the end user requests /home then this home.html view is automatically injected into this layout here which is index.html. Similarly, if someone request /courses, then courses.html will be injected into index.html. Similarly, someone requests /students, then students.html will be injected into this layout view.
 
 ##### What is the CDN link for angular route?
 
-    The CDN link is if you go back to the homepage and when we click this download button and look at this, this is the CDN link.
-    (不需要下载angular.min.js或angular.js文件，通过CDN link可以直接引入外部的angular.min.js或angular.js文件。如果需要引入外部的angular-route.min.js，只需要复制外部的angular.min.js的CDN link并把名称改为angular-route.min.js即可。)
+The CDN link is if you go back to the homepage and when we click this download button and look at this, this is the CDN link.
+(不需要下载angular.min.js或angular.js文件，通过CDN link可以直接引入外部的angular.min.js或angular.js文件。如果需要引入外部的angular-route.min.js，只需要复制外部的angular.min.js的CDN link并把名称改为angular-route.min.js即可。)
 
 ![](../img/CDN_link.png).
 
