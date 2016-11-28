@@ -1014,17 +1014,137 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>BASE64 加密算法2</title></head><body><article class="markdown-body"><h2 id="base64"><a name="user-content-base64" href="#base64" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Base64 算法原理，以及编码、解码【加密、解密】 介绍</h2>
-<p>Base64编码，是我们程序开发中经常使用到的编码方法。它是一种基于用64个可打印字符来表示二进制数据的表示方法。它通常用作存储、传输一些二进制数据编码方法！也是MIME（多用途互联网邮件扩展，主要用作电子邮件标准）中一种可打印字符表示二进制数据的常见编码方法！它其实只是定义用可打印字符传输内容一种方法，并不会产生新的字符集！有时候，我们学习转换的思路后，我们其实也可以结合自己的实际需要，构造一些自己接口定义编码方式。好了，我们一起看看，它的转换思路吧！</p>
-<h3 id="base64_1"><a name="user-content-base64_1" href="#base64_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Base64实现转换原理</h3>
-<p>它是用64个可打印字符表示二进制所有数据方法。由于2的6次方等于64，所以可以用每6个位元为一个单元，对应某个可打印字符。我们知道三个字节有24个位元，就可以刚好对应于4个Base64单元，即3个字节需要用4个Base64的可打印字符来表示。在Base64中的可打印字符包括字母A-Z、a-z、数字0-9 ，这样共有62个字符，此外两个可打印符号在不同的系统中一般有所不同。但是，我们经常所说的Base64另外2个字符是：“+/”。这64个字符，所对应表如下。</p>
-<p><img src="///F://github/fuyunma.github.io/md/BASE64/img/BASE64%E8%BD%AC%E6%8D%A2%E8%A1%A8.png" alt=""></p>
-<p>转换的时候，将三个byte的数据，先后放入一个24bit的缓冲区中，先来的byte占高位。数据不足3byte的话，于缓冲区中剩下的bit用0补足。然后，每次取出6个bit，按照其值选择<br />
-ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/中的字符作为编码后的输出。不断进行，直到全部输入数据转换完成。</p>
-<p>如果最后剩下两个输入数据，在编码结果后加1个“=”；如果最后剩下一个输入数据，编码结果后加2个“=”；如果没有剩下任何数据，就什么都不要加，这样才可以保证资料还原的正确性。</p>
-<p>编码后的数据比原始数据略长，为原来的4/3。无论什么样的字符都会全部被编码，因此不像Quoted-printable编码，还保留部分可打印字符。所以，它的可读性不如Quoted-printable编码！</p>
-<p><img src="///F://github/fuyunma.github.io/md/BASE64/img/eg1.png" alt="刚好是三个字节的情况"></p>
-<p>M的Ascii码是77,前六位对应值为19，对应base64字符是T，如此类推。其它字符编码就可以自动转换得到！我们看看另外不是刚好是3个字节的情况！</p>
-<p><img src="///F://github/fuyunma.github.io/md/BASE64/img/eg2.png" alt="不是刚好三个字节的情况"></p>
-<h3 id="base64_2"><a name="user-content-base64_2" href="#base64_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Base64解码</h3>
-<p>解码是编码的逆过程，先看后面补了几个“=”号，最多只可能补2个“=”号。一个“=”相当于补了2个0，所以去掉后面补的0后，再按8位展开，即可还原。</p></article></body></html>
+</style><title>mdFileEdit</title></head><body><article class="markdown-body"><h1 id="md"><a name="user-content-md" href="#md" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>.md文件的编辑</h1>
+<h2 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>关于标题</h2>
+<p>规范的README文件开头都写上一个标题，这被称为大标题。</p>
+<h3 id="1"><a name="user-content-1" href="#1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.大标题</h3>
+<p>==== </p>
+<p>在文本下面加上等于号=，那么上方的文本就变成了大标题（等于号的个数无限制，但一定要大于0个哦(∩_∩)）。</p>
+<h3 id="2"><a name="user-content-2" href="#2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.中标题</h3>
+<p>&ndash;</p>
+<p>在文本下面加上减号-，那么上方的文本就变成了中标题，同样，减号个数无限制。</p>
+<h3 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>小结：</h3>
+<p>使用=、-显示的大、中标题下面都有一条横线。</p>
+<p>如果输入的=上方无文字，则只显示一条直线。如果不希望将上方的文字转义为大标题，但又需要在文字下面显示直线，则在文字和=之间插入一个空行即可（补空行：可以避免上下两种不同的布局方式交错在一起。）。</p>
+<p>与=不同的是，使用-显示出来的直线是虚线而不是实线。并且只有输入三个或三个以上的-才能显示出直线（同-，*和下划线_也只有输入三个或三个以上才能显示直线）。</p>
+<h3 id="3"><a name="user-content-3" href="#3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.标题的等级表示法</h3>
+<p>分为六个等级，显示的文本从大依次减小。不同等级之间是以井号 # 的个数来标识的。一级标题有一个 #，二级标题有两个# ，以此类推。</p>
+<h5 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>大标题 &lt;====&gt; 一级标题</h5>
+<h5 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>中标题 &lt;====&gt; 二级标题</h5>
+<p><img src="../../../../img/mdFileEdit/titleGradeShow.png" alt=""></p>
+<p>注意：#和标题名称要并排写作一行，显示效果：</p>
+<h1 id="_5"><a name="user-content-_5" href="#_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>一级标题</h1>
+<h2 id="_6"><a name="user-content-_6" href="#_6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>二级标题</h2>
+<h3 id="_7"><a name="user-content-_7" href="#_7" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>三级标题</h3>
+<h4 id="_8"><a name="user-content-_8" href="#_8" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>四级标题</h4>
+<h5 id="_9"><a name="user-content-_9" href="#_9" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>五级标题</h5>
+<h6 id="_10"><a name="user-content-_10" href="#_10" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>六级标题</h6>
+<h2 id="_11"><a name="user-content-_11" href="#_11" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>显示文本</h2>
+<h3 id="1_1"><a name="user-content-1_1" href="#1_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.普通文本</h3>
+<p>直接输入的文字就是普通文本。需要注意的是不能直接通过回车来换行，需要使用&lt;br&gt;(或者&lt;br/&gt;)标签。事实上，markdown支持一些html标签。当然如果完全使用html来写，就失去意义了，毕竟markdown并非专门做前端的，然而仅实现一般效果的话，它会比html写起来要简洁得多。</p>
+<p>直接输入URL，就会自动转换为超链接。</p>
+<h3 id="2_1"><a name="user-content-2_1" href="#2_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.显示空格</h3>
+<p>文本首行缩进空格默认是会被忽略的，如果将输入法从半角转换为全角，就会解决这个问题。</p>
+<h3 id="3_1"><a name="user-content-3_1" href="#3_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.单行文本</h3>
+<p>使用Tab符实现单行文本（只在一行显示，不会自动换行，显示宽度不够会自动出现水平滚动条）。</p>
+<p><img alt="" src="../../../../img/mdFileEdit/singleLineText.png" /></p>
+<p>注意前面有1个Tab。单行文本显示效果如图：</p>
+<pre><code>Hello,大家好，我是fuyun。Hello,大家好，我是fuyun。Hello,大家好，我是fuyun。Hello,大家好，我是fuyun。
+</code></pre>
+<h3 id="4"><a name="user-content-4" href="#4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4.多行文本</h3>
+<p>多行文本和单行文本异曲同工，只要在每行行首加一个Tab。</p>
+<pre><code>欢迎到访
+很高兴见到您 
+祝您，早上好，中午好，下午好，晚安
+</code></pre>
+<h3 id="5"><a name="user-content-5" href="#5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5.部分文字高亮</h3>
+<p>使一段话中部分文字高亮显示，起到突出强调的作用，那么可以把它用 ` ` 包围起来。注意这不是单引号，而是Tab上方，数字1左边的按键（注意使用英文输入法）。</p>
+<p>Thank <code>You</code>. Please <code>Call</code> Me <code>Coder</code></p>
+<h3 id="6"><a name="user-content-6" href="#6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>6.文字超链接</h3>
+<p>给一段文字加入超链接的格式: [ 要显示的文字 ]( 链接的地址 )。比如：</p>
+<p>[我的博客](<a href="https://fuyunma.github.io">https://fuyunma.github.io</a>) </p>
+<p>显示效果：<a href="https://fuyunma.github.io">我的博客</a> </p>
+<p>还可以加鼠标悬停显示的文本(即在URL之后添加一个用英文双引号括起来的字符串)：</p>
+<p>[我的博客](<a href="https://fuyunma.github.io">https://fuyunma.github.io</a> &ldquo;fuyunma.github.io&rdquo;) </p>
+<p>显示效果：<a href="https://fuyunma.github.io" title="fuyunma.github.io">我的博客</a> </p>
+<h2 id="_12"><a name="user-content-_12" href="#_12" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>插入符号</h2>
+<h3 id="1_2"><a name="user-content-1_2" href="#1_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.圆点符</h3>
+<p>在GitHub的markdown语法里也支持使用圆点符，编辑的时候使用星号*。</p>
+<p><img alt="" src="../../../../img/mdFileEdit/bullets.png" /></p>
+<p>要注意的是星号* 后面要有一个空格。否则显示为普通星号。上文的显示效果如图：</p>
+<ul>
+<li>
+<p>昵称：果冻虾仁 </p>
+</li>
+<li>
+<p>别名：隔壁老王 </p>
+</li>
+<li>
+<p>英文名：Jelly </p>
+</li>
+</ul>
+<p>此外还有二级圆点和三级圆点。</p>
+<p><img alt="" src="../../../../img/mdFileEdit/bulletsGrade.png" /></p>
+<p>第二行最前面加一个Tab，第三行最前面加两个Tab。这样用来表示层级结构会更加清晰：</p>
+<ul>
+<li>
+<p>编程语言 </p>
+<ul>
+<li>
+<p>脚本语言 </p>
+<ul>
+<li>Python </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2_2"><a name="user-content-2_2" href="#2_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.缩进</h3>
+<p><img alt="" src="../../../../img/mdFileEdit/indent.png" /></p>
+<p>显示效果：</p>
+<blockquote>
+<p>数据结构 </p>
+<blockquote>
+<p>树 </p>
+<blockquote>
+<p>二叉树 </p>
+<blockquote>
+<p>平衡二叉树 </p>
+<blockquote>
+<p>满二叉树</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="_13"><a name="user-content-_13" href="#_13" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>插入图片</h2>
+<h3 id="1_3"><a name="user-content-1_3" href="#1_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.来源于网络的图片</h3>
+<p>![](<a href="http://www.baidu.com/img/bdlogo.gif">http://www.baidu.com/img/bdlogo.gif</a>) </p>
+<p>即叹号! + 方括号[ ] + 括号( )，其中( )里是图片的URL。</p>
+<p>在方括号里可以加入一些标识性的信息，如：</p>
+<p>![baidu](<a href="http://www.baidu.com/img/bdlogo.gif">http://www.baidu.com/img/bdlogo.gif</a>) </p>
+<p>这个方括号里的baidu并不会对图像显示造成任何影响，如果你想达到鼠标悬停显示提示信息，那么可以仿照前面介绍的文本中的方法，如下：</p>
+<p>![baidu](<a href="http://www.baidu.com/img/bdlogo.gif">http://www.baidu.com/img/bdlogo.gif</a> &ldquo;百度logo&rdquo;) </p>
+<p>在URL后面，加一个双引号包围的字符串，显示效果如图：</p>
+<p><img alt="baidu" src="http://www.baidu.com/img/bdlogo.gif" title="百度logo" /> </p>
+<h3 id="2github"><a name="user-content-2github" href="#2github" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.GitHub仓库里的图片</h3>
+<p>考虑到其他来源的网络图片很可能会失效，所以在大多数情况下我们需要显示GitHub仓库(或者项目)里的图片，显示方法如下:</p>
+<p>其实与上面的格式基本一致的，所不同的就是括号里的URL该怎么写。</p>
+<p><a href="https://github.com/">https://github.com/</a> 你的用户名 / 你的项目名 / raw / 分支名 / 存放图片的文件夹 / 该文件夹下的图片</p>
+<p>例如：</p>
+<p>![](<a href="https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif">https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif</a>) </p>
+<p>用户在GitHub上的用户名guodongxiaren；有一个项目ImageCache；raw表示原数据，无需修改；主分支master；项目里有一个文件夹Logo；Logo文件夹下有一张图片foryou.gif。显示如下：</p>
+<p><img alt="" src="https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif" /></p>
+<h3 id="3_2"><a name="user-content-3_2" href="#3_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.给图片加上超链接</h3>
+<p>如果希望图片带有超链接的功能，即点击一个图片进入一个指定的网页，写法如下：</p>
+<p>[![](<a href="http://www.baidu.com/img/bdlogo.gif">http://www.baidu.com/img/bdlogo.gif</a> &ldquo;百度Logo&rdquo;)](<a href="http://baidu.com">http://baidu.com</a>)</p>
+<p>显示效果:</p>
+<p><a href="http://baidu.com"><img alt="" src="http://www.baidu.com/img/bdlogo.gif" title="百度Logo" /></a></p>
+<h2 id="_14"><a name="user-content-_14" href="#_14" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>插入代码片段</h2>
+<p>我们需要在代码的上一行和下一行用``` 标记。```不是单引号，而是数字1左边，Tab键上面的键。要实现语法高亮那么只要在 ``` 之后加上你的编程语言即可（忽略大小写）。c++语言可以写成c++也可以是cpp。看代码：</p>
+<p>```JavaScript<br />
+var box = document.getElementById(&ldquo;box&rdquo;);<br />
+```</p>
+<p>实际显示效果:</p>
+<pre><code class="JavaScript">var box = document.getElementById(&quot;box&quot;);
+</code></pre></article></body></html>
