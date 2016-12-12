@@ -50,7 +50,7 @@ $scope is an angular object that is passed to this controller function by the an
 
         var myApp = angular.module("myModule",[]);
 
-        myApp.controller("myController",function($scope){controller
+        myApp.controller("myController",function($scope){
             $scope.message = "AngularJS Tutorial";
         });
 
