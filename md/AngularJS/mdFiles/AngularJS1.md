@@ -89,7 +89,8 @@ AngularJS is a JavaScript framework that helps build web applications.
             true
 
 ##### HtmlPage1.html
-    <!DOCTYPE html>
+```JavaScript
+<!DOCTYPE html>
     <html lang="en" ng-app>
     <head>
         <meta charset="UTF-8">
@@ -101,7 +102,8 @@ AngularJS is a JavaScript framework that helps build web applications.
             {{ { name:"fuyun", age:24 }.name }}
         </div>
     </body>
-    </html>
+</html>
+```
 
 ####    result: 
             fuyun
