@@ -89,7 +89,7 @@ AngularJS is a JavaScript framework that helps build web applications.
             true
 
 ##### HtmlPage1.html
-```JavaScript
+```HTML
 <!DOCTYPE html>
     <html lang="en" ng-app>
     <head>
@@ -99,7 +99,7 @@ AngularJS is a JavaScript framework that helps build web applications.
     </head>
     <body>
         <div>
-            
+            {{ { name:"fuyun", age:24 }.name }}
         </div>
     </body>
 </html>
