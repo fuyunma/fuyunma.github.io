@@ -99,7 +99,7 @@ AngularJS is a JavaScript framework that helps build web applications.
     </head>
     <body>
         <div>
-            {{ { name:"fuyun", age:24 }.name }}
+            /*{{ { name:"fuyun", age:24 }.name }}*/
         </div>
     </body>
 </html>
